@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/flexora/membership" method="post">
+        <input type="text" name="planName" placeholder="planName"><br>
+        <input type="text" name="durationInMonths" placeholder="durationInMonths"><br>
+        <input type="number" name="price" placeholder="price"><br>
+        <input type="checkbox" name="facilities" value="Gym Access">Gym Access
+        <input type="checkbox" name="facilities" value="Locker">Locker
+        <input type="checkbox" name="facilities" value="Cardio Area">Cardio Area
+        <input type="checkbox" name="facilities" value="Group Classes">Group Classes
+        <input type="checkbox" name="facilities" value="Personal Trainer">Personal Trainer
+        <input type="checkbox" name="facilities" value="Diet Consultation">Diet Consultation<br>
+        <input type="text" name="description">
+        <select name="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

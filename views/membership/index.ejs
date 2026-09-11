@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>All memberships</h1>
+        <% for(let membership of memberships) { %>
+           <div>
+               <p> plan name : <%= membership.planName %></p>
+               <p>plan duration : <%= membership.durationInMonths %></p>
+               <p>plan price : <%= membership.price %></p>
+               <button><a href="/flexora/membership/<%=membership._id%>">see full plan</a></button>
+           </div>
+        <% } %>
+        <button><a href="/flexora/membership/new">Add Membership</a></button>
+    </div>
+</body>
+</html>

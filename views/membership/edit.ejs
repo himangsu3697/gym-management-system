@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/flexora/membership/<%=membership._id%>?_method=PUT" method="post">
+
+        <input type="text" name="planName" value="<%=membership.planName%>"><br>
+
+        <input type="text" name="durationInMonths" value="<%=membership.durationInMonths%>"><br>
+
+        <input type="number" name="price" value="<%=membership.price%>"><br>
+
+        <input type="checkbox" name="facilities" value="Gym Access"
+        <% if (membership.facilities.includes("Gym Access")) { %>
+            checked
+        <% } %>>
+        Gym Access
+        
+        <input type="checkbox" name="facilities" value="Locker"
+        <% if (membership.facilities.includes("Locker")) { %>
+            checked
+        <% } %>>
+        Locker
+        
+        <input type="checkbox" name="facilities" value="Cardio Area"
+        <% if (membership.facilities.includes("Cardio Area")) { %>
+            checked
+        <% } %>>
+        Cardio Area
+        
+        <input type="checkbox" name="facilities" value="Group Classes"
+        <% if (membership.facilities.includes("Group Classes")) { %>
+            checked
+        <% } %>>
+        Group Classes
+        
+        <input type="checkbox" name="facilities" value="Personal Trainer"
+        <% if (membership.facilities.includes("Personal Trainer")) { %>
+            checked
+        <% } %>>
+        Personal Trainer
+        
+        <input type="checkbox" name="facilities" value="Diet Consultation"
+        <% if (membership.facilities.includes("Diet Consultation")) { %>
+            checked
+        <% } %>>
+        Diet Consultation
+
+        <input type="text" name="description" value="<%=membership.description%>">
+        <select name="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select><br>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>plan name : <%= membership.planName %></p>
+        <p>duration in Months : <%= membership.durationInMonths %></p>
+        <p>price : <%= membership.price %></p>
+        <p>facilities : <%= membership.facilities %></p>
+        <p>description : <%= membership.description %></p>
+        <p>status : <%= membership.status %></p>
+        <button><a href="/flexora/membership/<%=membership._id%>/edit">edit</a></button>
+        <form action="/flexora/membership/<%=membership._id%>?_method=DELETE" method="post">
+           <button>Delete</button>
+        </form>
+    </div>
+</body>
+</html>
