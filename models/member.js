@@ -40,6 +40,12 @@ const memberSchema = new mongoose.Schema({
 
     membershipEndDate: {
         type: Date
+    },
+
+    status: {
+        type: String,
+        enum: ["active", "inactive"],
+        default: "inactive"
     }
 });
 

@@ -24,12 +24,7 @@ const trannerSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min: 2
-    },
-    
-    members : {
-        type : [mongoose.Schema.Types.ObjectId],
-        ref : "Member",
-    },
+    }
 });
 
 const Tranner = mongoose.model("Tranner", trannerSchema);

@@ -3,6 +3,8 @@ const Membership = require("../models/membership.js");
 const membershipData = require("./membershipData.js");
 const Trainer = require("../models/trainer.js");
 const trainerData = require("./trainerData.js");
+const Member = require("../models/member.js");
+const memberData = require("./memberData.js");
 
 
 async function main() {
@@ -16,12 +18,15 @@ main().then((res) =>{
 const initDb = async () => {
     await Membership.deleteMany();
     await Trainer.deleteMany();
+    await Member.deleteMany();
     await Membership.insertMany(membershipData);
     await Trainer.insertMany(trainerData);
+    await Member.insertMany(memberData);
 };
 initDb().then((res) => {
     console.log("data inserted successfully");
 });
+
 
 
 

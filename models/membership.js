@@ -3,7 +3,6 @@ const membershipSchema = new mongoose.Schema({
     planName: {
         type: String,
         required: true,
-        unique: true,
         trim: true
     },
 

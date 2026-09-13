@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/flexora/member/<%=id%>/membership" method="post">
+        <select name="membershipId">
+            <%for(let membership of memberships) { %>
+                <option value="<%=membership._id%>">
+                    <div>plan name : <%=membership.planName%></div>
+                    <div>duration : <%=membership.durationInMonths%></div>
+                </option>
+            <%}%>
+        </select>
+        <button>submit</button>
+    </form>
+</body>
+</html>

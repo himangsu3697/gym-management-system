@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit member</h1>
+    <form action="/flexora/member/<%=member._id%>?_method=PUT" method="post">
+        <input type="text" name="mname" value="<%=member.mname%>"> Name <br>
+        <input type="email" name="email" value="<%=member.email%>"> Email <br>
+        <input type="number" name="age" value="<%=member.age%>"> Age <br>
+        <input type="text" name="workoutPlan" value="<%=member.workoutPlan%>"> Workout Plan <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

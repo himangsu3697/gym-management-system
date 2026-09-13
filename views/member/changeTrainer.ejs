@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/flexora/member/<%=member._id%>/trainer?_method=PUT" method="post">
+        <select name="trainerId">
+            <%for(let trainer of trainers) { %>
+                <option value="<%=trainer._id%>"
+                    <%=(member.trainer === trainer._id)? "selected" : ""%> 
+                    >
+                    <div>name : <%=trainer.tname%></div>
+                    <div>experience : <%=trainer.experience%></div>
+                </option>
+            <%}%>
+        </select>
+        <button>submit</button>
+    </form>
+</body>
+</html>
