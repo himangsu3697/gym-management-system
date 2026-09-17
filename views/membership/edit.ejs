@@ -1,64 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("./layouts/boilerplate.ejs") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <div class="membership-page offset-custom">
+        <div class="page-header">
+            <div>
+                <h1>Edit Membership</h1>
+                <p>Home / Memberships / Edit Membership</p>
+            </div>
+        </div>
 
-<body>
-    <form action="/flexora/membership/<%=membership._id%>?_method=PUT" method="post">
+        <div class="membership-card">
 
-        <input type="text" name="planName" value="<%=membership.planName%>"><br>
+            <div class="card-header">
+                <div class="card-icon">
+                    +
+                </div>
 
-        <input type="text" name="durationInMonths" value="<%=membership.durationInMonths%>"><br>
+                <div>
+                    <h2>Membership Details</h2>
+                    <p>Update the membership plan details</p>
+                </div>
+            </div>
 
-        <input type="number" name="price" value="<%=membership.price%>"><br>
 
-        <input type="checkbox" name="facilities" value="Gym Access"
-        <% if (membership.facilities.includes("Gym Access")) { %>
-            checked
-        <% } %>>
-        Gym Access
-        
-        <input type="checkbox" name="facilities" value="Locker"
-        <% if (membership.facilities.includes("Locker")) { %>
-            checked
-        <% } %>>
-        Locker
-        
-        <input type="checkbox" name="facilities" value="Cardio Area"
-        <% if (membership.facilities.includes("Cardio Area")) { %>
-            checked
-        <% } %>>
-        Cardio Area
-        
-        <input type="checkbox" name="facilities" value="Group Classes"
-        <% if (membership.facilities.includes("Group Classes")) { %>
-            checked
-        <% } %>>
-        Group Classes
-        
-        <input type="checkbox" name="facilities" value="Personal Trainer"
-        <% if (membership.facilities.includes("Personal Trainer")) { %>
-            checked
-        <% } %>>
-        Personal Trainer
-        
-        <input type="checkbox" name="facilities" value="Diet Consultation"
-        <% if (membership.facilities.includes("Diet Consultation")) { %>
-            checked
-        <% } %>>
-        Diet Consultation
+            <form action="/flexora/membership/<%= membership._id %>?_method=PUT" method="post">
 
-        <input type="text" name="description" value="<%=membership.description%>">
-        <select name="status">
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-        </select><br>
-        <button>Submit</button>
-    </form>
-</body>
+                <div class="membership-form-grid">
 
-</html>
+                    <!-- Plan Name -->
+                    <div class="form-field">
+                        <label for="planName">Plan Name</label>
+
+                        <input type="text" id="planName" name="planName" value="<%= membership.planName %>"
+                            placeholder="e.g. Premium" required>
+                    </div>
+
+
+                    <!-- Duration -->
+                    <div class="form-field">
+                        <label for="duration">Duration</label>
+
+                        <select id="duration" name="durationInMonths" required>
+                            <option value="">Select duration</option>
+
+                            <option value="1" <%=membership.durationInMonths==1 ? "selected" : "" %>
+                                >
+                                1 Month
+                            </option>
+
+                            <option value="3" <%=membership.durationInMonths==3 ? "selected" : "" %>
+                                >
+                                3 Months
+                            </option>
+
+                            <option value="6" <%=membership.durationInMonths==6 ? "selected" : "" %>
+                                >
+                                6 Months
+                            </option>
+
+                            <option value="12" <%=membership.durationInMonths==12 ? "selected" : "" %>
+                                >
+                                12 Months
+                            </option>
+
+                        </select>
+                    </div>
+
+
+                    <!-- Price -->
+                    <div class="form-field">
+                        <label for="price">Price (₹)</label>
+
+                        <input type="number" id="price" name="price" value="<%= membership.price %>"
+                            placeholder="e.g. 4000" min="0" required>
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="form-field">
+                        <label for="status">Status</label>
+
+                        <select id="status" name="status">
+
+                            <option value="active" <%=membership.status==="active" ? "selected" : "" %>
+                                >
+                                Active
+                            </option>
+
+                            <option value="inactive" <%=membership.status==="inactive" ? "selected" : "" %>
+                                >
+                                Inactive
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- Facilities -->
+                <div class="facilities-container">
+
+                    <label class="section-label">
+                        Facilities Included
+                    </label>
+
+                    <div class="facilities-grid">
+
+
+                        <!-- Gym Access -->
+                        <div class="facility">
+
+                            <input type="checkbox" id="gymAccess" name="facilities" value="Gym Access"
+                                <%=membership.facilities.includes("Gym Access") ? "checked" : "" %>
+                            >
+
+                            <label for="gymAccess">
+                                Gym Access
+                            </label>
+
+                        </div>
+
+
+                        <!-- Locker -->
+                        <div class="facility">
+
+                            <input type="checkbox" id="locker" name="facilities" value="Locker"
+                                <%=membership.facilities.includes("Locker") ? "checked" : "" %>
+                            >
+
+                            <label for="locker">
+                                Locker
+                            </label>
+
+                        </div>
+
+
+                        <!-- Cardio Area -->
+                        <div class="facility">
+
+                            <input type="checkbox" id="cardio" name="facilities" value="Cardio Area"
+                                <%=membership.facilities.includes("Cardio Area") ? "checked" : "" %>
+                            >
+
+                            <label for="cardio">
+                                Cardio Area
+                            </label>
+
+                        </div>
+
+
+                        <!-- Group Classes -->
+                        <div class="facility">
+
+                            <input type="checkbox" id="classes" name="facilities" value="Group Classes"
+                                <%=membership.facilities.includes("Group Classes") ? "checked" : "" %>
+                            >
+
+                            <label for="classes">
+                                Group Classes
+                            </label>
+
+                        </div>
+
+
+                        <!-- Personal Trainer -->
+                        <div class="facility">
+
+                            <input type="checkbox" id="trainer" name="facilities" value="Personal Trainer"
+                                <%=membership.facilities.includes("Personal Trainer") ? "checked" : "" %>
+                            >
+
+                            <label for="trainer">
+                                Personal Trainer
+                            </label>
+
+                        </div>
+
+
+                        <!-- Diet Consultation -->
+                        <div class="facility">
+
+                            <input type="checkbox" id="diet" name="facilities" value="Diet Consultation"
+                                <%=membership.facilities.includes("Diet Consultation") ? "checked" : "" %>
+                            >
+
+                            <label for="diet">
+                                Diet Consultation
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="form-field description-field">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea id="description" name="description"
+                        placeholder="Enter membership description..."><%= membership.description %></textarea>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="form-actions">
+
+                    <button type="button" class="cancel-btn" onclick="history.back()">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="submit-btn">
+                        Update Membership
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>

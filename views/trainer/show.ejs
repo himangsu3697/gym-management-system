@@ -1,20 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <p>Name : <%=trainer.tname%></p>
-        <p>email : <%=trainer.email%></p>
-        <p>age : <%=trainer.age%></p>
-        <p>experience : <%=trainer.experience%></p>
-        <button><a href="/flexora/trainer/<%=trainer._id%>/edit">Edit</a></button>
-        <form action="/flexora/trainer/<%=trainer._id%>?_method=DELETE" method="post">
-            <button>Delete</button>
-        </form>
-    </div>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <!-- ================= TRAINER DETAILS PAGE ================= -->
+
+    <section class="flexora-trainer-details-page">
+
+        <div class="container-fluid px-3 px-lg-5">
+
+            <!-- Page Header -->
+            <div class="flexora-page-header">
+
+                <div>
+
+                    <div class="flexora-breadcrumb">
+                        <a href="/flexora">Home</a>
+                        <span>/</span>
+                        <a href="/flexora/trainer">Trainers</a>
+                        <span>/</span>
+                        <span>Trainer Details</span>
+                    </div>
+
+                    <h1>Trainer Details</h1>
+
+                    <p>
+                        View trainer information and manage trainer details.
+                    </p>
+
+                </div>
+
+                <a href="/flexora/trainer" class="flexora-back-btn">
+                    <i class="bi bi-arrow-left"></i>
+                    Back to Trainers
+                </a>
+
+            </div>
+
+
+            <!-- Trainer Profile Card -->
+            <div class="flexora-trainer-profile-card">
+
+                <!-- Profile Top -->
+                <div class="flexora-profile-top">
+
+                    <!-- Trainer Icon -->
+                    <div class="flexora-profile-icon">
+                        <i class="bi bi-person-workspace"></i>
+                    </div>
+
+
+                    <div class="flexora-profile-heading">
+
+                        <h2>
+                            <%= trainer.tname %>
+                        </h2>
+
+                        <span class="flexora-profile-role">
+                            <i class="bi bi-person-badge"></i>
+                            Gym Trainer
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Trainer Information -->
+                <div class="flexora-profile-section">
+
+                    <h3>
+                        <i class="bi bi-person-vcard"></i>
+                        Personal Information
+                    </h3>
+
+
+                    <div class="flexora-profile-grid">
+
+                        <!-- Name -->
+                        <div class="flexora-profile-item">
+
+                            <span class="profile-label">
+                                Full Name
+                            </span>
+
+                            <strong>
+                                <%= trainer.tname %>
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="flexora-profile-item">
+
+                            <span class="profile-label">
+                                Email Address
+                            </span>
+
+                            <strong>
+                                <%= trainer.email %>
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Age -->
+                        <div class="flexora-profile-item">
+
+                            <span class="profile-label">
+                                Age
+                            </span>
+
+                            <strong>
+                                <%= trainer.age %> years
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Experience -->
+                        <div class="flexora-profile-item">
+
+                            <span class="profile-label">
+                                Experience
+                            </span>
+
+                            <strong>
+                                <%= trainer.experience %> years
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+                <div class="flexora-profile-actions">
+
+                    <a href="/flexora/trainer/<%= trainer._id %>/edit" class="flexora-edit-btn">
+                        <i class="bi bi-pencil-square"></i>
+                        Edit Trainer
+                    </a>
+
+
+                    <form action="/flexora/trainer/<%= trainer._id %>?_method=DELETE" method="post">
+
+                        <button type="submit" class="flexora-delete-btn">
+                            <i class="bi bi-trash3"></i>
+                            Delete Trainer
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>

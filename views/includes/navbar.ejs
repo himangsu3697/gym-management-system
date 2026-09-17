@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg flexora-navbar" aria-label="Main navigation">
+  <div class="container-fluid px-3 px-lg-5">
+
+    <!-- Brand / Logo (always visible, order 0 = first on every screen) -->
+    <a class="navbar-brand d-flex align-items-center order-0" href="/flexora">
+      <i class="bi bi-lightning-charge-fill"></i>
+      <span>Flex<span class="brand-accent">ora</span></span>
+    </a>
+
+    <!-- Login + Join Now + Hamburger toggle -->
+    <div class="d-flex align-items-center gap-2 gap-sm-5 order-1 order-lg-3">
+
+      <!-- Login: placeholder, wire up to auth routes later -->
+      <button type="button" class="btn btn-login" aria-label="Login">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span class="btn-text">Login</span>
+      </button>
+
+      <a href="/flexora/join" class="btn btn-join" aria-label="Join Now">
+        <i class="bi bi-person-plus-fill"></i>
+        <span class="btn-text">Join Now</span>
+      </a>
+
+      <!-- Hamburger toggle button: only visible below the lg breakpoint,
+           only controls the links collapse below -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flexoraNavbarContent"
+        aria-controls="flexoraNavbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Collapsible content: ONLY the nav links live in here.
+         order-2 keeps it on its own wrapped line on mobile (below brand + buttons).
+         order-lg-2 puts it between the brand and the buttons on desktop. -->
+    <div class="collapse navbar-collapse order-2 order-lg-2" id="flexoraNavbarContent">
+      <ul class="navbar-nav mx-lg-auto my-3 my-lg-0 text-center text-lg-start">
+        <li class="nav-item">
+          <a class="nav-link" href="/flexora">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flexora/member">Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flexora/membership">Memberships</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flexora/trainer">Trainers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flexora/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flexora/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

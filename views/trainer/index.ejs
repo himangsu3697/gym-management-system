@@ -1,22 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <h1>All Trainers</h1>
-        <% for(let trainer of trainers) { %>
+<% layout("./layouts/boilerplate.ejs") %>
+
+<!-- ================= TRAINERS PAGE ================= -->
+
+<section class="flexora-trainers-page">
+
+    <div class="container-fluid px-3 px-lg-5">
+
+        <!-- Page Header -->
+        <div class="flexora-page-header">
+
             <div>
-                <p>Name : <%=trainer.tname%></p>
-                <p>email : <%=trainer.email%></p>
-                <p>age : <%=trainer.age%></p>
-                <button><a href="/flexora/trainer/<%=trainer._id%>">see full details</a></button>
+
+                <div class="flexora-breadcrumb">
+                    <a href="/flexora">Home</a>
+                    <span>/</span>
+                    <span>Trainers</span>
+                </div>
+
+                <h1>All Trainers</h1>
+
+                <p>
+                    Manage your gym trainers and view their details.
+                </p>
+
             </div>
-        <% } %>
-        <button><a href="/flexora/trainer/new">add Trainer</a></button>
+
+
+            <a href="/flexora/trainer/new" class="flexora-add-btn">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Add Trainer
+
+            </a>
+
+        </div>
+
+
+        <!-- Trainer Summary -->
+        <div class="flexora-trainer-summary">
+
+            <div class="flexora-summary-icon">
+                <i class="bi bi-person-badge-fill"></i>
+            </div>
+
+            <div>
+                <span>Total Trainers</span>
+
+                <strong>
+                    <%= trainers.length %>
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- Trainers -->
+        <div class="row g-4">
+
+            <% for(let trainer of trainers) { %>
+
+                <div class="col-xl-4 col-lg-6 col-md-6">
+
+                    <div class="flexora-trainer-card">
+
+
+                        <!-- Card Top -->
+                        <div class="flexora-trainer-top">
+
+                            <!-- Trainer Icon -->
+                            <div class="flexora-trainer-icon">
+
+                                <i class="bi bi-person-workspace"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Trainer Name -->
+                        <h2>
+                            <%= trainer.tname %>
+                        </h2>
+
+
+                        <!-- Trainer Details -->
+                        <div class="flexora-trainer-details">
+
+                            <div>
+                                <i class="bi bi-envelope"></i>
+
+                                <span>
+                                    <%= trainer.email %>
+                                </span>
+                            </div>
+
+
+                            <div>
+                                <i class="bi bi-calendar3"></i>
+
+                                <span>
+                                    <%= trainer.age %> years old
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Divider -->
+                        <div class="flexora-trainer-divider"></div>
+
+
+                        <!-- View Button -->
+                        <a
+                            href="/flexora/trainer/<%= trainer._id %>"
+                            class="flexora-trainer-btn"
+                        >
+
+                            View Full Details
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <% } %>
+
+
+            <!-- Empty State -->
+            <% if(trainers.length === 0) { %>
+
+                <div class="flexora-empty-state">
+
+                    <div class="flexora-empty-icon">
+                        <i class="bi bi-person-x"></i>
+                    </div>
+
+                    <h3>No Trainers Found</h3>
+
+                    <p>
+                        Start by adding your first trainer.
+                    </p>
+
+                    <a
+                        href="/flexora/trainer/new"
+                        class="flexora-add-btn"
+                    >
+                        <i class="bi bi-plus-lg"></i>
+                        Add Trainer
+                    </a>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+
     </div>
-</body>
-</html>
+
+</section>

@@ -1,27 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/flexora/membership" method="post">
-        <input type="text" name="planName" placeholder="planName"><br>
-        <input type="text" name="durationInMonths" placeholder="durationInMonths"><br>
-        <input type="number" name="price" placeholder="price"><br>
-        <input type="checkbox" name="facilities" value="Gym Access">Gym Access
-        <input type="checkbox" name="facilities" value="Locker">Locker
-        <input type="checkbox" name="facilities" value="Cardio Area">Cardio Area
-        <input type="checkbox" name="facilities" value="Group Classes">Group Classes
-        <input type="checkbox" name="facilities" value="Personal Trainer">Personal Trainer
-        <input type="checkbox" name="facilities" value="Diet Consultation">Diet Consultation<br>
-        <input type="text" name="description">
-        <select name="status">
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-        </select><br>
-        <button>Submit</button>
-    </form>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="membership-page offset-custom">
+
+        <div class="page-header">
+            <div>
+                <h1>Create Membership</h1>
+                <p>Home / Memberships / Create Membership</p>
+            </div>
+        </div>
+
+
+        <div class="membership-card">
+
+            <div class="card-header">
+                <div class="card-icon">
+                    +
+                </div>
+
+                <div>
+                    <h2>Membership Details</h2>
+                    <p>Create a new membership plan for your gym</p>
+                </div>
+            </div>
+
+
+            <form action="/flexora/membership" method="post">
+
+                <div class="membership-form-grid">
+
+                    <!-- Plan Name -->
+                    <div class="form-field">
+                        <label for="planName">Plan Name</label>
+
+                        <input type="text" id="planName" name="planName" placeholder="e.g. Premium" required>
+                    </div>
+
+
+                    <!-- Duration -->
+                    <div class="form-field">
+                        <label for="duration">Duration</label>
+
+                        <select id="duration" name="durationInMonths" required>
+                            <option value="">Select duration</option>
+                            <option value="1">1 Month</option>
+                            <option value="3">3 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">12 Months</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Price -->
+                    <div class="form-field">
+                        <label for="price">Price (₹)</label>
+
+                        <input type="number" id="price" name="price" placeholder="e.g. 4000" min="0" required>
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="form-field">
+                        <label for="status">Status</label>
+
+                        <select id="status" name="status">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- Facilities -->
+                <div class="facilities-container">
+
+                    <label class="section-label">
+                        Facilities Included
+                    </label>
+
+                    <div class="facilities-grid">
+
+                        <div class="facility">
+                            <input type="checkbox" id="gymAccess" name="facilities" value="Gym Access">
+
+                            <label for="gymAccess">
+                                Gym Access
+                            </label>
+                        </div>
+
+
+                        <div class="facility">
+                            <input type="checkbox" id="locker" name="facilities" value="Locker">
+
+                            <label for="locker">
+                                Locker
+                            </label>
+                        </div>
+
+
+                        <div class="facility">
+                            <input type="checkbox" id="cardio" name="facilities" value="Cardio Area">
+
+                            <label for="cardio">
+                                Cardio Area
+                            </label>
+                        </div>
+
+
+                        <div class="facility">
+                            <input type="checkbox" id="classes" name="facilities" value="Group Classes">
+
+                            <label for="classes">
+                                Group Classes
+                            </label>
+                        </div>
+
+
+                        <div class="facility">
+                            <input type="checkbox" id="trainer" name="facilities" value="Personal Trainer">
+
+                            <label for="trainer">
+                                Personal Trainer
+                            </label>
+                        </div>
+
+
+                        <div class="facility">
+                            <input type="checkbox" id="diet" name="facilities" value="Diet Consultation">
+
+                            <label for="diet">
+                                Diet Consultation
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="form-field description-field">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea id="description" name="description"
+                        placeholder="Enter membership description..."></textarea>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="form-actions">
+
+                    <button type="button" class="cancel-btn" onclick="history.back()">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="submit-btn">
+                        Create Membership
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>

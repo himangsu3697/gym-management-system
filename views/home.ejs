@@ -1,11 +1,782 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Home of the Flexora</h1>
-</body>
-</html>
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <!-- 1. HERO -->
+    <section class="flexora-hero">
+
+        <div class="flexora-hero-bg">
+            <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2000&auto=format&fit=crop"
+                alt="Athlete training in a modern gym" loading="eager">
+
+            <div class="flexora-hero-overlay"></div>
+            <div class="flexora-hero-glow"></div>
+        </div>
+
+        <div class="container flexora-hero-content">
+
+            <span class="flexora-badge">Welcome to Flexora</span>
+
+            <h1 class="flexora-hero-heading">
+                Build your body.<br>
+                <span class="flexora-accent-text">Build your future.</span>
+            </h1>
+
+            <p class="flexora-hero-text">
+                Train smarter, get stronger, and transform your lifestyle with a fitness
+                experience designed around your goals.
+            </p>
+
+            <div class="flexora-hero-actions">
+                <a href="/flexora/membership" class="btn flexora-btn-primary">
+                    Explore Memberships
+                </a>
+
+                <a href="/flexora/signup" class="btn flexora-btn-outline">
+                    Start Your Journey
+                </a>
+            </div>
+
+            <div class="flexora-hero-trust">
+
+                <div class="flexora-trust-item">
+                    <span class="flexora-trust-number">500+</span>
+                    <span class="flexora-trust-label">Members</span>
+                </div>
+
+                <div class="flexora-trust-divider"></div>
+
+                <div class="flexora-trust-item">
+                    <span class="flexora-trust-number">10+</span>
+                    <span class="flexora-trust-label">Expert Trainers</span>
+                </div>
+
+                <div class="flexora-trust-divider"></div>
+
+                <div class="flexora-trust-item">
+                    <span class="flexora-trust-number">24/7</span>
+                    <span class="flexora-trust-label">Support</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Floating stat card -->
+        <div class="flexora-floating-card">
+
+            <i class="bi bi-graph-up-arrow"></i>
+
+            <div>
+                <strong>92%</strong>
+                <span>Members hit their goal in 90 days</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 2. FITNESS STATS -->
+    <section class="flexora-stats-section">
+
+        <div class="container">
+
+            <div class="row g-3 g-lg-4">
+
+                <div class="col-6 col-lg-3">
+                    <div class="flexora-stat-card">
+                        <i class="bi bi-people-fill"></i>
+                        <h3>500+</h3>
+                        <p>Active Members</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="flexora-stat-card">
+                        <i class="bi bi-person-badge-fill"></i>
+                        <h3>10+</h3>
+                        <p>Expert Trainers</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="flexora-stat-card">
+                        <i class="bi bi-award-fill"></i>
+                        <h3>5+</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="flexora-stat-card">
+                        <i class="bi bi-clock-fill"></i>
+                        <h3>24/7</h3>
+                        <p>Fitness Support</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 3. ABOUT FLEXORA -->
+    <section class="flexora-section">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <div class="flexora-about-image">
+
+                        <img src="https://images.unsplash.com/photo-1677165733273-dcc3724c00e8?q=80&w=1400&auto=format&fit=crop"
+                            alt="Strength training inside a modern gym" loading="lazy">
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <span class="flexora-label">About Flexora</span>
+
+                    <h2 class="flexora-heading">
+                        More Than Just A Gym
+                    </h2>
+
+                    <p class="flexora-body-text">
+                        Flexora is built to help you become stronger, healthier and more
+                        confident through quality equipment, expert guidance and flexible
+                        membership plans.
+                    </p>
+
+
+                    <ul class="flexora-check-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Modern Equipment
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Expert Trainers
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Flexible Memberships
+                        </li>
+
+                    </ul>
+
+
+                    <a href="/flexora/about" class="btn flexora-btn-primary">
+                        Discover Flexora
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4. WHY CHOOSE FLEXORA -->
+    <section class="flexora-section flexora-section-alt">
+
+        <div class="container">
+
+            <div class="flexora-section-head">
+
+                <h2 class="flexora-heading">
+                    Everything You Need To Become Stronger
+                </h2>
+
+                <p class="flexora-subtitle">
+                    Designed for beginners, athletes and everyone in between.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="flexora-feature-card">
+
+                        <i class="bi bi-bounding-box-circles"></i>
+
+                        <h3>Modern Equipment</h3>
+
+                        <p>
+                            Professional equipment for effective strength and fitness training.
+                        </p>
+
+                        <span class="flexora-card-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="flexora-feature-card">
+
+                        <i class="bi bi-person-video3"></i>
+
+                        <h3>Expert Trainers</h3>
+
+                        <p>
+                            Get guidance from experienced fitness professionals.
+                        </p>
+
+                        <span class="flexora-card-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="flexora-feature-card">
+
+                        <i class="bi bi-card-checklist"></i>
+
+                        <h3>Flexible Memberships</h3>
+
+                        <p>
+                            Choose a membership that fits your goals and schedule.
+                        </p>
+
+                        <span class="flexora-card-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="flexora-feature-card">
+
+                        <i class="bi bi-heart-pulse-fill"></i>
+
+                        <h3>Personal Training</h3>
+
+                        <p>
+                            Get personalized support with our Elite membership.
+                        </p>
+
+                        <span class="flexora-card-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 5. MEMBERSHIP PLANS -->
+    <section class="flexora-section">
+
+        <div class="container">
+
+            <div class="flexora-section-head">
+
+                <h2 class="flexora-heading">
+                    Choose Your Level
+                </h2>
+
+                <p class="flexora-subtitle">
+                    Simple plans. Powerful results.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- BASIC -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="flexora-membership-card">
+
+                        <h3>Basic</h3>
+
+                        <div class="flexora-price">
+
+                            <span class="flexora-price-from">
+                                Starting from
+                            </span>
+
+                            <span class="flexora-price-amount">
+                                ₹1500
+                            </span>
+
+                        </div>
+
+
+                        <ul class="flexora-plan-list">
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Gym Access
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Locker
+                            </li>
+
+                        </ul>
+
+
+                        <a href="/flexora/membership" class="btn flexora-btn-outline w-100">
+                            Explore Plan
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREMIUM -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="flexora-membership-card">
+
+                        <h3>Premium</h3>
+
+                        <div class="flexora-price">
+
+                            <span class="flexora-price-from">
+                                Starting from
+                            </span>
+
+                            <span class="flexora-price-amount">
+                                ₹2500
+                            </span>
+
+                        </div>
+
+
+                        <ul class="flexora-plan-list">
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Gym Access
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Locker
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Cardio Area
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Group Classes
+                            </li>
+
+                        </ul>
+
+
+                        <a href="/flexora/membership" class="btn flexora-btn-outline w-100">
+                            Explore Plan
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ELITE -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="flexora-membership-card flexora-membership-elite">
+
+                        <span class="flexora-popular-badge mt-5">
+                            Most Popular
+                        </span>
+
+                        <h3>Elite</h3>
+
+                        <div class="flexora-price">
+
+                            <span class="flexora-price-from">
+                                Starting from
+                            </span>
+
+                            <span class="flexora-price-amount">
+                                ₹4000
+                            </span>
+
+                        </div>
+
+
+                        <ul class="flexora-plan-list">
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Gym Access
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Locker
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Cardio Area
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Group Classes
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Personal Trainer
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Diet Consultation
+                            </li>
+
+                        </ul>
+
+
+                        <a href="/flexora/membership" class="btn flexora-btn-primary w-100">
+                            Choose Elite
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 6. FULL-WIDTH FITNESS IMAGE -->
+    <section class="flexora-image-section">
+
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=2000&auto=format&fit=crop"
+            alt="Athlete performing strength training" loading="lazy">
+
+        <div class="flexora-image-overlay"></div>
+
+        <div class="container flexora-image-content">
+
+            <h2>
+                Discipline<br>
+                Creates Results.
+            </h2>
+
+            <p>
+                Your goals don't wait. Neither should you.
+            </p>
+
+            <a href="/flexora/membership" class="btn flexora-btn-primary">
+                Start Training
+            </a>
+
+        </div>
+
+    </section>
+    <!-- ================= TRAINERS ================= -->
+    <section class="flexora-section flexora-trainers-section">
+        <div class="container">
+
+            <div class="flexora-section-heading">
+                <span class="flexora-eyebrow">OUR TRAINERS</span>
+                <h2>Train With The <span>Best</span></h2>
+                <p>
+                    Get guidance from experienced trainers who help you
+                    stay consistent and achieve your fitness goals.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Trainer 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="flexora-trainer-card">
+
+                        <div class="flexora-trainer-icon">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+
+                        <div class="flexora-trainer-info">
+                            <h3>Strength Trainer</h3>
+                            <p>Strength & Conditioning</p>
+                            <span>Expertise in muscle building and strength training</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="flexora-trainer-card">
+
+                        <div class="flexora-trainer-icon">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+
+                        <div class="flexora-trainer-info">
+                            <h3>Fitness Trainer</h3>
+                            <p>Fitness & Fat Loss</p>
+                            <span>Focused on fitness, endurance and body transformation</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="flexora-trainer-card">
+
+                        <div class="flexora-trainer-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+
+                        <div class="flexora-trainer-info">
+                            <h3>Wellness Trainer</h3>
+                            <p>Cardio & Wellness</p>
+                            <span>Helping members build healthy and sustainable habits</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center flexora-view-all">
+
+        <a href="/flexora/trainer">
+            View All Trainers
+            <i class="bi bi-arrow-right"></i>
+        </a>
+
+    </div>
+
+    </div>
+
+    </section>
+
+
+    <!-- 8. FACILITIES -->
+    <section class="flexora-section">
+
+        <div class="container">
+
+            <div class="flexora-section-head">
+
+                <h2 class="flexora-heading">
+                    Built For Your Fitness Goals
+                </h2>
+
+                <p class="flexora-subtitle">
+                    Every space at Flexora is set up for a purpose.
+                </p>
+
+            </div>
+
+
+            <div class="flexora-bento">
+
+                <!-- GYM EQUIPMENT -->
+                <div class="flexora-facility-card flexora-bento-large">
+
+                    <img src="https://images.unsplash.com/photo-1677165733273-dcc3724c00e8?q=80&w=1200&auto=format&fit=crop"
+                        alt="Free weight and barbell training area" loading="lazy">
+
+                    <div class="flexora-facility-overlay">
+
+                        <i class="bi bi-bounding-box-circles"></i>
+
+                        <h3>
+                            Gym Equipment
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARDIO -->
+                <div class="flexora-facility-card">
+
+                    <i class="bi bi-heart-pulse"></i>
+
+                    <h3>
+                        Cardio Area
+                    </h3>
+
+                    <p>
+                        Treadmills, bikes &amp; rowers for every endurance goal.
+                    </p>
+
+                </div>
+
+
+                <!-- GROUP CLASSES -->
+                <div class="flexora-facility-card">
+
+                    <i class="bi bi-people"></i>
+
+                    <h3>
+                        Group Classes
+                    </h3>
+
+                    <p>
+                        Coach-led sessions that keep you accountable.
+                    </p>
+
+                </div>
+
+
+                <!-- LOCKER -->
+                <div class="flexora-facility-card">
+
+                    <i class="bi bi-lock"></i>
+
+                    <h3>
+                        Locker Facility
+                    </h3>
+
+                    <p>
+                        Secure storage, every visit.
+                    </p>
+
+                </div>
+
+
+                <!-- PERSONAL TRAINING -->
+                <div class="flexora-facility-card flexora-bento-large">
+
+                    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1200&auto=format&fit=crop"
+                        alt="Personal training session in a gym" loading="lazy">
+
+                    <div class="flexora-facility-overlay">
+
+                        <i class="bi bi-person-video3"></i>
+
+                        <h3>
+                            Personal Training
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIET -->
+                <div class="flexora-facility-card">
+
+                    <i class="bi bi-clipboard2-pulse"></i>
+
+                    <h3>
+                        Diet Consultation
+                    </h3>
+
+                    <p>
+                        Nutrition plans built around your training.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 9. FITNESS QUOTE -->
+    <section class="flexora-quote-section">
+
+        <div class="container">
+
+            <p class="flexora-quote">
+                &ldquo;The only bad workout is the one that didn't happen.&rdquo;
+            </p>
+
+            <span class="flexora-quote-author">
+                &mdash; Flexora
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- 10. FINAL CTA -->
+    <section class="flexora-cta">
+
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?q=80&w=2000&auto=format&fit=crop"
+            alt="Athlete training in a gym" loading="lazy">
+
+        <div class="flexora-cta-overlay"></div>
+
+        <div class="container flexora-cta-content">
+
+            <h2>
+                Ready To Become Stronger?
+            </h2>
+
+            <p>
+                Your fitness journey starts with one decision.
+            </p>
+
+            <div class="flexora-cta-actions">
+
+                <a href="/flexora/signup" class="btn flexora-btn-primary">
+                    Join Flexora
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <a href="/flexora/membership" class="btn flexora-btn-outline">
+                    View Memberships
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>

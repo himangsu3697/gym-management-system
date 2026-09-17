@@ -1,0 +1,4223 @@
+ /* --- Custom styles to give the navbar a fitness/gym feel --- */
+ .flexora-navbar {
+   background-color: #12141c;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   position: fixed;
+   z-index: 10;
+   width: 100%;
+   top: 0px;
+ }
+
+ .flexora-navbar .navbar-brand {
+   font-weight: 700;
+   font-size: 1.4rem;
+   letter-spacing: 0.5px;
+   color: #ffffff;
+ }
+
+ .flexora-navbar .navbar-brand .brand-accent {
+   color: #7c3aed;
+   /* purple accent, matches gym dashboard theme */
+ }
+
+ .flexora-navbar .navbar-brand i {
+   color: #7c3aed;
+   margin-right: 6px;
+ }
+
+ .flexora-navbar .nav-link {
+   color: #d1d5db !important;
+   font-weight: 500;
+   margin: 0 0.35rem;
+   padding: 0.5rem 0.75rem !important;
+   border-radius: 6px;
+   transition: color 0.2s ease, background-color 0.2s ease;
+ }
+
+ .flexora-navbar .nav-link:hover,
+ .flexora-navbar .nav-link:focus {
+   color: #ffffff !important;
+   background-color: rgba(124, 58, 237, 0.15);
+ }
+
+ .flexora-navbar .nav-link.active {
+   color: #ffffff !important;
+   background-color: rgba(124, 58, 237, 0.25);
+ }
+
+ .flexora-navbar .btn-login,
+ .flexora-navbar .btn-join {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.4rem;
+   white-space: nowrap;
+   flex-shrink: 0;
+ }
+
+ .flexora-navbar .btn-login {
+   color: #ffffff;
+   border: 1px solid rgba(255, 255, 255, 0.25);
+   background-color: transparent;
+   font-weight: 500;
+ }
+
+ .flexora-navbar .btn-login:hover {
+   background-color: rgba(255, 255, 255, 0.08);
+   color: #ffffff;
+ }
+
+ .flexora-navbar .btn-join {
+   background-color: #7c3aed;
+   border: none;
+   color: #ffffff;
+   font-weight: 600;
+ }
+
+ .flexora-navbar .btn-join:hover {
+   background-color: #6d28d9;
+   color: #ffffff;
+ }
+
+ .flexora-navbar .navbar-toggler {
+   border: none;
+   padding: 0.25rem 0.5rem;
+   flex-shrink: 0;
+   background-color: #ffffff;
+ }
+
+ .flexora-navbar .navbar-toggler:focus {
+   box-shadow: none;
+ }
+
+ /* ---------- Responsive tweaks for all screen sizes ---------- */
+
+ /* Very small phones (under 400px): keep brand + Login + Join + toggler
+     on one line by hiding the button labels and showing icons only.
+     aria-label on each button keeps them accessible to screen readers. */
+ @media (max-width: 399.98px) {
+
+   .flexora-navbar .btn-login .btn-text,
+   .flexora-navbar .btn-join .btn-text {
+     display: none;
+   }
+
+   .flexora-navbar .btn-login,
+   .flexora-navbar .btn-join {
+     padding: 0.4rem 0.55rem;
+     font-size: 1rem;
+   }
+
+   .flexora-navbar .navbar-brand {
+     font-size: 1.05rem;
+   }
+ }
+
+ /* Small phones (400px - 575.98px) */
+ @media (min-width: 400px) and (max-width: 575.98px) {
+   .flexora-navbar .navbar-brand {
+     font-size: 1.15rem;
+   }
+
+   .flexora-navbar .btn-login,
+   .flexora-navbar .btn-join {
+     padding: 0.4rem 0.7rem;
+     font-size: 0.85rem;
+   }
+ }
+
+ /* Phones and tablets in general (under 576px) */
+ @media (max-width: 575.98px) {
+   .flexora-navbar .navbar-brand i {
+     font-size: 1.1rem;
+   }
+
+   .flexora-navbar .nav-link {
+     padding: 0.6rem 0.75rem !important;
+   }
+ }
+
+ /* Below the lg breakpoint (menu is collapsed: phones + tablets) */
+ @media (max-width: 991.98px) {
+   .flexora-navbar .navbar-nav {
+     text-align: center;
+   }
+
+   .flexora-navbar .navbar-nav .nav-link {
+     margin: 0.15rem 0;
+   }
+
+   .flexora-navbar .navbar-collapse {
+     width: 100%;
+     padding-top: 0.5rem;
+     border-top: 1px solid rgba(255, 255, 255, 0.08);
+   }
+ }
+
+ /* Tablets in the expanded range (992px - 1199.98px) */
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+   .flexora-navbar .nav-link {
+     margin: 0 0.15rem;
+     padding: 0.5rem 0.5rem !important;
+     font-size: 0.95rem;
+   }
+
+   .flexora-navbar .btn-login,
+   .flexora-navbar .btn-join {
+     padding: 0.45rem 0.9rem;
+     font-size: 0.9rem;
+   }
+ }
+
+ /* Large desktops and up (1400px+) */
+ @media (min-width: 1400px) {
+   .flexora-navbar .nav-link {
+     font-size: 1.02rem;
+     margin: 0 0.5rem;
+   }
+ }
+
+
+ /* ============================= */
+ /* FLEXORA FOOTER STYLES */
+ /* ============================= */
+
+ .flexora-footer {
+   background-color: #0d0f14;
+   color: #b5b9c2;
+   padding: 60px 0 0 0;
+   font-size: 0.95rem;
+   border-top: 1px solid rgba(255, 255, 255, 0.06);
+ }
+
+ /* Brand */
+ .flexora-footer-brand {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: #ffffff;
+   letter-spacing: 0.5px;
+   margin-bottom: 12px;
+ }
+
+ .flexora-footer-logo-icon {
+   color: #7c4dff;
+   font-size: 1.4rem;
+ }
+
+ .flexora-footer-brand-accent {
+   color: #7c4dff;
+ }
+
+ .flexora-footer-tagline {
+   font-weight: 600;
+   color: #e5e7eb;
+   margin-bottom: 10px;
+ }
+
+ .flexora-footer-desc {
+   color: #9ca0aa;
+   line-height: 1.6;
+   margin-bottom: 0;
+ }
+
+ /* Section Titles */
+ .flexora-footer-title {
+   color: #ffffff;
+   font-weight: 600;
+   font-size: 1rem;
+   margin-bottom: 18px;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+ }
+
+ /* Links */
+ .flexora-footer-links li {
+   margin-bottom: 12px;
+ }
+
+ .flexora-footer-link {
+   color: #9ca0aa;
+   text-decoration: none;
+   transition: color 0.2s ease, padding-left 0.2s ease;
+ }
+
+ .flexora-footer-link:hover {
+   color: #7c4dff;
+   padding-left: 3px;
+ }
+
+ .flexora-footer-link-highlight {
+   color: #a78bfa;
+   font-weight: 500;
+ }
+
+ .flexora-footer-link-highlight:hover {
+   color: #c4b5fd;
+ }
+
+ /* Contact */
+ .flexora-footer-contact li {
+   display: flex;
+   align-items: flex-start;
+   gap: 10px;
+   margin-bottom: 14px;
+   color: #9ca0aa;
+   line-height: 1.5;
+ }
+
+ .flexora-footer-contact i {
+   color: #7c4dff;
+   margin-top: 3px;
+ }
+
+ /* Social Icons */
+ .flexora-social-links {
+   display: flex;
+   gap: 12px;
+   margin-top: 8px;
+ }
+
+ .flexora-social-link {
+   width: 38px;
+   height: 38px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   background-color: rgba(255, 255, 255, 0.06);
+   color: #d1d3d8;
+   font-size: 1rem;
+   text-decoration: none;
+   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+ }
+
+ .flexora-social-link:hover {
+   background-color: #7c4dff;
+   color: #ffffff;
+   transform: translateY(-2px);
+ }
+
+ /* Divider */
+ .flexora-footer-divider {
+   border: none;
+   border-top: 1px solid rgba(255, 255, 255, 0.08);
+   margin: 40px 0 0 0;
+ }
+
+ /* Bottom Bar */
+ .flexora-footer-bottom {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: 12px;
+   padding: 20px 0;
+ }
+
+ .flexora-footer-copy {
+   margin: 0;
+   color: #8a8e98;
+   font-size: 0.875rem;
+ }
+
+ .flexora-footer-bottom-links {
+   display: flex;
+   gap: 24px;
+   margin: 0;
+ }
+
+ .flexora-footer-bottom-links .flexora-footer-link {
+   font-size: 0.875rem;
+   color: #8a8e98;
+ }
+
+ /* Responsive tweaks */
+ @media (max-width: 767.98px) {
+   .flexora-footer {
+     padding-top: 40px;
+     text-align: left;
+   }
+
+   .flexora-footer-bottom {
+     flex-direction: column;
+     align-items: flex-start;
+   }
+
+   .flexora-footer-bottom-links {
+     gap: 18px;
+   }
+ }
+
+ /* =========================================================
+   FLEXORA HOMEPAGE
+   Dark premium theme + purple accent
+   ========================================================= */
+
+ :root {
+   --flexora-bg: #080C12;
+   --flexora-bg-secondary: #0D131D;
+   --flexora-card: #111925;
+   --flexora-card-border: rgba(255, 255, 255, 0.08);
+
+   --flexora-accent: #8B5CF6;
+   --flexora-accent-light: #A78BFA;
+   --flexora-accent-glow: rgba(139, 92, 246, 0.35);
+
+   --flexora-text: #F5F5F7;
+   --flexora-text-muted: #9AA1AC;
+
+   --flexora-radius: 16px;
+ }
+
+
+ /* =========================================================
+   GLOBAL / SHARED
+   ========================================================= */
+
+ html,
+ body {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+ }
+
+ body {
+   background: var(--flexora-bg);
+   color: var(--flexora-text);
+   overflow-x: hidden;
+ }
+
+ .flexora-section {
+   width: 100%;
+   background: var(--flexora-bg);
+   padding: 96px 0;
+ }
+
+ .flexora-section-alt {
+   background: var(--flexora-bg-secondary);
+ }
+
+ .flexora-section-head {
+   max-width: 640px;
+   margin: 0 0 56px;
+ }
+
+ .flexora-label {
+   color: var(--flexora-accent-light);
+   font-size: 0.85rem;
+   font-weight: 600;
+   letter-spacing: 0.04em;
+   display: inline-block;
+   margin-bottom: 14px;
+   text-transform: uppercase;
+ }
+
+ .flexora-heading {
+   color: var(--flexora-text);
+   font-weight: 700;
+   font-size: clamp(1.8rem, 3vw, 2.6rem);
+   line-height: 1.15;
+   margin-bottom: 14px;
+ }
+
+ .flexora-subtitle {
+   color: var(--flexora-text-muted);
+   font-size: 1.05rem;
+   margin-bottom: 0;
+ }
+
+ .flexora-body-text {
+   color: var(--flexora-text-muted);
+   font-size: 1.02rem;
+   line-height: 1.7;
+   margin-bottom: 28px;
+   max-width: 480px;
+ }
+
+ .flexora-accent-text {
+   color: var(--flexora-accent-light);
+ }
+
+
+ /* =========================================================
+   BUTTONS
+   ========================================================= */
+
+ .flexora-btn-primary,
+ .flexora-btn-outline {
+   padding: 13px 28px;
+   border-radius: 10px;
+   font-weight: 600;
+   font-size: 0.95rem;
+
+   transition:
+     transform 0.25s ease,
+     box-shadow 0.25s ease,
+     background 0.25s ease,
+     border-color 0.25s ease;
+ }
+
+ .flexora-btn-primary {
+   background: var(--flexora-accent);
+   color: #fff;
+   border: 1px solid var(--flexora-accent);
+ }
+
+ .flexora-btn-primary:hover {
+   background: var(--flexora-accent-light);
+   border-color: var(--flexora-accent-light);
+   color: #fff;
+   transform: translateY(-2px);
+   box-shadow: 0 10px 30px var(--flexora-accent-glow);
+ }
+
+ .flexora-btn-outline {
+   background: transparent;
+   color: var(--flexora-text);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+ }
+
+ .flexora-btn-outline:hover {
+   background: rgba(139, 92, 246, 0.08);
+   border-color: var(--flexora-accent-light);
+   color: var(--flexora-accent-light);
+   transform: translateY(-2px);
+ }
+
+
+ /* =========================================================
+   1. HERO
+   ========================================================= */
+
+ .flexora-hero {
+   position: relative;
+   width: 100%;
+   min-height: 88vh;
+
+   display: flex;
+   align-items: center;
+
+   overflow: hidden;
+   background: var(--flexora-bg);
+
+   padding-bottom: 60px;
+ }
+
+ .flexora-hero-bg {
+   position: absolute;
+   inset: 0;
+   z-index: 0;
+ }
+
+ .flexora-hero-bg img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center 30%;
+ }
+
+ .flexora-hero-overlay {
+   position: absolute;
+   inset: 0;
+
+   background: linear-gradient(100deg,
+       rgba(8, 12, 18, 0.96) 0%,
+       rgba(8, 12, 18, 0.82) 42%,
+       rgba(8, 12, 18, 0.45) 100%);
+ }
+
+ .flexora-hero-glow {
+   position: absolute;
+
+   top: -10%;
+   left: 10%;
+
+   width: 480px;
+   height: 480px;
+
+   background: var(--flexora-accent-glow);
+   filter: blur(120px);
+   border-radius: 50%;
+
+   pointer-events: none;
+ }
+
+ .flexora-hero-content {
+   position: relative;
+   z-index: 1;
+
+   padding-top: 40px;
+
+   animation: flexora-fade-up 0.8s ease both;
+ }
+
+ .flexora-badge {
+   display: inline-block;
+
+   padding: 8px 16px;
+
+   border: 1px solid var(--flexora-card-border);
+   border-radius: 30px;
+
+   background: rgba(139, 92, 246, 0.08);
+
+   color: var(--flexora-accent-light);
+
+   font-size: 0.8rem;
+   font-weight: 600;
+   letter-spacing: 0.03em;
+
+   margin-bottom: 24px;
+ }
+
+ .flexora-hero-heading {
+   color: var(--flexora-text);
+
+   font-weight: 800;
+   font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+   line-height: 1.08;
+
+   max-width: 700px;
+
+   margin-bottom: 22px;
+ }
+
+ .flexora-hero-text {
+   color: var(--flexora-text-muted);
+
+   font-size: 1.1rem;
+   line-height: 1.7;
+
+   max-width: 520px;
+
+   margin-bottom: 34px;
+ }
+
+ .flexora-hero-actions {
+   display: flex;
+   gap: 16px;
+   flex-wrap: wrap;
+
+   margin-bottom: 56px;
+ }
+
+ .flexora-hero-trust {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+   flex-wrap: wrap;
+ }
+
+ .flexora-trust-item {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .flexora-trust-number {
+   color: var(--flexora-text);
+
+   font-weight: 700;
+   font-size: 1.3rem;
+ }
+
+ .flexora-trust-label {
+   color: var(--flexora-text-muted);
+   font-size: 0.85rem;
+ }
+
+ .flexora-trust-divider {
+   width: 1px;
+   height: 32px;
+
+   background: var(--flexora-card-border);
+ }
+
+ .flexora-floating-card {
+   position: absolute;
+
+   right: 6%;
+   bottom: 14%;
+
+   z-index: 2;
+
+   display: flex;
+   align-items: center;
+   gap: 14px;
+
+   background: rgba(17, 25, 37, 0.85);
+
+   border: 1px solid var(--flexora-card-border);
+   backdrop-filter: blur(12px);
+
+   border-radius: var(--flexora-radius);
+
+   padding: 16px 20px;
+
+   max-width: 260px;
+
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+   transition: transform 0.3s ease;
+ }
+
+ .flexora-floating-card:hover {
+   transform: translateY(-4px);
+ }
+
+ .flexora-floating-card i {
+   font-size: 1.4rem;
+   color: var(--flexora-accent-light);
+ }
+
+ .flexora-floating-card strong {
+   display: block;
+
+   color: var(--flexora-text);
+   font-size: 1rem;
+ }
+
+ .flexora-floating-card span {
+   color: var(--flexora-text-muted);
+   font-size: 0.8rem;
+ }
+
+
+ /* =========================================================
+   2. STATS
+   ========================================================= */
+
+ .flexora-stats-section {
+   position: relative;
+
+   margin-top: -70px;
+   margin-bottom: 40px;
+
+   z-index: 3;
+ }
+
+ .flexora-stat-card {
+   height: 100%;
+
+   background: var(--flexora-card);
+
+   border: 1px solid var(--flexora-card-border);
+   border-radius: var(--flexora-radius);
+
+   padding: 26px 20px;
+
+   text-align: center;
+
+   transition:
+     transform 0.25s ease,
+     border-color 0.25s ease,
+     box-shadow 0.25s ease;
+ }
+
+ .flexora-stat-card:hover {
+   transform: translateY(-6px);
+
+   border-color: var(--flexora-accent);
+
+   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+ }
+
+ .flexora-stat-card i {
+   color: var(--flexora-accent-light);
+
+   font-size: 1.6rem;
+
+   margin-bottom: 10px;
+
+   display: inline-block;
+ }
+
+ .flexora-stat-card h3 {
+   color: var(--flexora-text);
+
+   font-weight: 700;
+   font-size: 1.6rem;
+
+   margin-bottom: 4px;
+ }
+
+ .flexora-stat-card p {
+   color: var(--flexora-text-muted);
+
+   font-size: 0.85rem;
+
+   margin: 0;
+ }
+
+
+ /* =========================================================
+   3. ABOUT
+   ========================================================= */
+
+ .flexora-about-image {
+   border-radius: var(--flexora-radius);
+
+   overflow: hidden;
+
+   border: 1px solid var(--flexora-card-border);
+ }
+
+ .flexora-about-image img {
+   width: 100%;
+   height: 460px;
+
+   object-fit: cover;
+
+   transition: transform 0.5s ease;
+ }
+
+ .flexora-about-image:hover img {
+   transform: scale(1.04);
+ }
+
+ .flexora-check-list {
+   list-style: none;
+
+   padding: 0;
+   margin: 0 0 32px;
+ }
+
+ .flexora-check-list li {
+   color: var(--flexora-text);
+
+   font-size: 1rem;
+
+   margin-bottom: 14px;
+
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+
+ .flexora-check-list i {
+   color: var(--flexora-accent-light);
+ }
+
+
+ /* =========================================================
+   4. FEATURE CARDS
+   ========================================================= */
+
+ .flexora-feature-card {
+   height: 100%;
+
+   background: var(--flexora-card);
+
+   border: 1px solid var(--flexora-card-border);
+   border-radius: var(--flexora-radius);
+
+   padding: 32px 26px;
+
+   position: relative;
+
+   transition:
+     transform 0.3s ease,
+     border-color 0.3s ease;
+ }
+
+ .flexora-feature-card:hover {
+   transform: translateY(-8px);
+
+   border-color: var(--flexora-accent);
+ }
+
+ .flexora-feature-card i {
+   font-size: 1.8rem;
+
+   color: var(--flexora-accent-light);
+
+   margin-bottom: 18px;
+
+   display: inline-block;
+ }
+
+ .flexora-feature-card h3 {
+   color: var(--flexora-text);
+
+   font-size: 1.15rem;
+   font-weight: 600;
+
+   margin-bottom: 10px;
+ }
+
+ .flexora-feature-card p {
+   color: var(--flexora-text-muted);
+
+   font-size: 0.92rem;
+   line-height: 1.6;
+
+   margin-bottom: 0;
+ }
+
+ .flexora-card-arrow {
+   position: absolute;
+
+   top: 28px;
+   right: 26px;
+
+   color: var(--flexora-text-muted);
+
+   opacity: 0;
+
+   transition:
+     opacity 0.3s ease,
+     transform 0.3s ease;
+ }
+
+ .flexora-feature-card:hover .flexora-card-arrow {
+   opacity: 1;
+
+   color: var(--flexora-accent-light);
+
+   transform: translate(3px, -3px);
+ }
+
+
+ /* =========================================================
+   5. MEMBERSHIP
+   ========================================================= */
+
+ .flexora-membership-card {
+   height: 100%;
+
+   background: var(--flexora-card);
+
+   border: 1px solid var(--flexora-card-border);
+   border-radius: var(--flexora-radius);
+
+   padding: 40px 32px;
+
+   position: relative;
+
+   transition:
+     transform 0.3s ease,
+     border-color 0.3s ease;
+ }
+
+ .flexora-membership-card:hover {
+   transform: translateY(-6px);
+
+   border-color: rgba(139, 92, 246, 0.5);
+ }
+
+ .flexora-membership-card h3 {
+   color: var(--flexora-text);
+
+   font-weight: 700;
+   font-size: 1.3rem;
+
+   margin-bottom: 20px;
+ }
+
+ .flexora-price {
+   margin-bottom: 26px;
+ }
+
+ .flexora-price-from {
+   display: block;
+
+   color: var(--flexora-text-muted);
+
+   font-size: 0.8rem;
+
+   margin-bottom: 4px;
+ }
+
+ .flexora-price-amount {
+   color: var(--flexora-text);
+
+   font-size: 2.1rem;
+   font-weight: 800;
+ }
+
+ .flexora-plan-list {
+   list-style: none;
+
+   padding: 0;
+   margin: 0 0 30px;
+ }
+
+ .flexora-plan-list li {
+   color: var(--flexora-text-muted);
+
+   font-size: 0.95rem;
+
+   padding: 10px 0;
+
+   border-top: 1px solid var(--flexora-card-border);
+
+   display: flex;
+   align-items: center;
+
+   gap: 10px;
+ }
+
+ .flexora-plan-list li:first-child {
+   border-top: none;
+ }
+
+ .flexora-plan-list i {
+   color: var(--flexora-accent-light);
+ }
+
+ .flexora-membership-elite {
+   border: 1px solid var(--flexora-accent);
+
+   box-shadow: 0 0 50px var(--flexora-accent-glow);
+
+   transform: scale(1.03);
+ }
+
+ .flexora-membership-elite:hover {
+   border-color: var(--flexora-accent-light);
+ }
+
+ .flexora-popular-badge {
+   position: absolute;
+
+   top: -14px;
+   right: 32px;
+
+   background: var(--flexora-accent);
+
+   color: #fff;
+
+   font-size: 0.72rem;
+   font-weight: 700;
+
+   letter-spacing: 0.04em;
+
+   padding: 6px 14px;
+
+   border-radius: 20px;
+ }
+
+
+ /* =========================================================
+   6. FULL-WIDTH IMAGE SECTION
+   ========================================================= */
+
+ .flexora-image-section {
+   position: relative;
+
+   width: 100%;
+   min-height: 60vh;
+
+   display: flex;
+   align-items: center;
+
+   overflow: hidden;
+ }
+
+ .flexora-image-section img {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+ }
+
+ .flexora-image-overlay {
+   position: absolute;
+
+   inset: 0;
+
+   background:
+     radial-gradient(circle at 20% 50%,
+       rgba(139, 92, 246, 0.25),
+       rgba(8, 12, 18, 0.9) 60%);
+ }
+
+ .flexora-image-content {
+   position: relative;
+
+   z-index: 1;
+ }
+
+ .flexora-image-content h2 {
+   color: #fff;
+
+   font-weight: 800;
+
+   font-size: clamp(2rem, 4.5vw, 3.4rem);
+
+   line-height: 1.1;
+
+   margin-bottom: 16px;
+ }
+
+ .flexora-image-content p {
+   color: rgba(255, 255, 255, 0.75);
+
+   font-size: 1.05rem;
+
+   margin-bottom: 28px;
+ }
+
+
+ /* =========================================================
+   7. TRAINERS
+   No trainer images
+   ========================================================= */
+
+ .flexora-trainer-card {
+   height: 100%;
+
+   background: var(--flexora-card);
+
+   border: 1px solid var(--flexora-card-border);
+
+   border-radius: var(--flexora-radius);
+
+   padding: 35px 25px;
+
+   text-align: center;
+
+   transition:
+     transform 0.3s ease,
+     border-color 0.3s ease,
+     box-shadow 0.3s ease;
+ }
+
+ .flexora-trainer-card:hover {
+   transform: translateY(-6px);
+
+   border-color: var(--flexora-accent);
+
+   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+ }
+
+ .flexora-trainer-icon {
+   width: 70px;
+   height: 70px;
+
+   margin: 0 auto 20px;
+
+   border-radius: 50%;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background: rgba(139, 92, 246, 0.12);
+
+   color: var(--flexora-accent-light);
+
+   font-size: 30px;
+ }
+
+ .flexora-trainer-info h3 {
+   color: var(--flexora-text);
+
+   font-size: 1.15rem;
+   font-weight: 600;
+
+   margin-bottom: 8px;
+ }
+
+ .flexora-trainer-info p {
+   color: var(--flexora-accent-light);
+
+   font-size: 0.9rem;
+
+   margin-bottom: 6px;
+ }
+
+ .flexora-trainer-info span {
+   color: var(--flexora-text-muted);
+
+   font-size: 0.82rem;
+ }
+
+ .flexora-view-all {
+   margin-top: 44px;
+ }
+
+ .flexora-view-all a {
+   color: var(--flexora-text);
+
+   font-weight: 600;
+
+   text-decoration: none;
+
+   border-bottom: 1px solid var(--flexora-card-border);
+
+   padding-bottom: 4px;
+
+   transition:
+     color 0.25s ease,
+     border-color 0.25s ease;
+ }
+
+ .flexora-view-all a:hover {
+   color: var(--flexora-accent-light);
+
+   border-color: var(--flexora-accent-light);
+ }
+
+
+ /* =========================================================
+   8. FACILITIES BENTO
+   ========================================================= */
+
+ .flexora-bento {
+   display: grid;
+
+   grid-template-columns: repeat(4, 1fr);
+
+   grid-auto-rows: 220px;
+
+   gap: 20px;
+ }
+
+ .flexora-bento-large {
+   grid-column: span 2;
+   grid-row: span 2;
+ }
+
+ .flexora-facility-card {
+   background: var(--flexora-card);
+
+   border: 1px solid var(--flexora-card-border);
+
+   border-radius: var(--flexora-radius);
+
+   padding: 26px;
+
+   position: relative;
+
+   overflow: hidden;
+
+   transition:
+     transform 0.3s ease,
+     border-color 0.3s ease;
+
+   display: flex;
+
+   flex-direction: column;
+
+   justify-content: flex-end;
+ }
+
+ .flexora-facility-card:hover {
+   transform: translateY(-4px);
+
+   border-color: var(--flexora-accent);
+ }
+
+ .flexora-facility-card>i {
+   color: var(--flexora-accent-light);
+
+   font-size: 1.6rem;
+
+   margin-bottom: 10px;
+ }
+
+ .flexora-facility-card h3 {
+   color: var(--flexora-text);
+
+   font-size: 1.05rem;
+   font-weight: 600;
+
+   margin-bottom: 6px;
+ }
+
+ .flexora-facility-card p {
+   color: var(--flexora-text-muted);
+
+   font-size: 0.85rem;
+
+   margin: 0;
+ }
+
+ .flexora-facility-card.flexora-bento-large img {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+
+   transition: transform 0.5s ease;
+ }
+
+ .flexora-facility-card.flexora-bento-large:hover img {
+   transform: scale(1.06);
+ }
+
+ .flexora-facility-overlay {
+   position: relative;
+
+   z-index: 1;
+
+   background:
+     linear-gradient(to top,
+       rgba(8, 12, 18, 0.95),
+       transparent 70%);
+
+   margin: -26px;
+
+   padding: 60px 26px 26px;
+ }
+
+ .flexora-facility-overlay i {
+   color: var(--flexora-accent-light);
+
+   font-size: 1.6rem;
+
+   margin-bottom: 8px;
+
+   display: inline-block;
+ }
+
+ .flexora-facility-overlay h3 {
+   color: #fff;
+
+   font-size: 1.15rem;
+   font-weight: 600;
+
+   margin: 0;
+ }
+
+
+ /* =========================================================
+   9. QUOTE
+   ========================================================= */
+
+ .flexora-quote-section {
+   width: 100%;
+
+   background: var(--flexora-bg-secondary);
+
+   padding: 120px 0;
+
+   text-align: center;
+ }
+
+ .flexora-quote {
+   color: var(--flexora-text);
+
+   font-size: clamp(1.5rem, 3vw, 2.3rem);
+
+   font-weight: 500;
+
+   line-height: 1.4;
+
+   max-width: 780px;
+
+   margin: 0 auto 20px;
+ }
+
+ .flexora-quote-author {
+   color: var(--flexora-accent-light);
+
+   font-weight: 600;
+
+   font-size: 0.95rem;
+ }
+
+
+ /* =========================================================
+   10. FINAL CTA
+   ========================================================= */
+
+ .flexora-cta {
+   position: relative;
+
+   width: 100%;
+
+   min-height: 55vh;
+
+   display: flex;
+
+   align-items: center;
+
+   justify-content: center;
+
+   text-align: center;
+
+   overflow: hidden;
+ }
+
+ .flexora-cta img {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+ }
+
+ .flexora-cta-overlay {
+   position: absolute;
+
+   inset: 0;
+
+   background:
+     radial-gradient(circle at 50% 40%,
+       rgba(139, 92, 246, 0.25),
+       rgba(8, 12, 18, 0.92) 65%);
+ }
+
+ .flexora-cta-content {
+   position: relative;
+
+   z-index: 1;
+ }
+
+ .flexora-cta-content h2 {
+   color: #fff;
+
+   font-weight: 800;
+
+   font-size: clamp(2rem, 4.5vw, 3.2rem);
+
+   margin-bottom: 14px;
+ }
+
+ .flexora-cta-content p {
+   color: rgba(255, 255, 255, 0.75);
+
+   font-size: 1.05rem;
+
+   margin-bottom: 30px;
+ }
+
+ .flexora-cta-actions {
+   display: flex;
+
+   gap: 16px;
+
+   justify-content: center;
+
+   flex-wrap: wrap;
+ }
+
+
+ /* =========================================================
+   ANIMATION
+   ========================================================= */
+
+ @keyframes flexora-fade-up {
+
+   from {
+     opacity: 0;
+     transform: translateY(24px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+ }
+
+
+ /* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+ @media (prefers-reduced-motion: reduce) {
+
+   .flexora-hero-content {
+     animation: none;
+   }
+
+   .flexora-stat-card,
+   .flexora-feature-card,
+   .flexora-membership-card,
+   .flexora-trainer-card,
+   .flexora-facility-card,
+   .flexora-about-image img,
+   .flexora-facility-card.flexora-bento-large img {
+     transition: none;
+   }
+
+ }
+
+
+ /* =========================================================
+   TABLET
+   ========================================================= */
+
+ @media (max-width: 991px) {
+
+   .flexora-floating-card {
+     display: none;
+   }
+
+   .flexora-membership-elite {
+     transform: none;
+   }
+
+   .flexora-bento {
+     grid-template-columns: repeat(2, 1fr);
+   }
+
+   .flexora-bento-large {
+     grid-column: span 2;
+     grid-row: span 1;
+     min-height: 260px;
+   }
+
+ }
+
+
+ /* =========================================================
+   MOBILE
+   ========================================================= */
+
+ @media (max-width: 575px) {
+
+   .flexora-section {
+     padding: 70px 0;
+   }
+
+   .flexora-hero {
+     min-height: auto;
+
+     padding-top: 100px;
+     padding-bottom: 80px;
+   }
+
+   .flexora-hero-actions .btn {
+     width: 100%;
+     text-align: center;
+   }
+
+   .flexora-hero-trust {
+     gap: 15px;
+   }
+
+   .flexora-trust-divider {
+     height: 25px;
+   }
+
+   .flexora-stats-section {
+     margin-top: -40px;
+     margin-bottom: 20px;
+   }
+
+   .flexora-about-image img {
+     height: 340px;
+   }
+
+   .flexora-membership-card {
+     padding: 32px 24px;
+   }
+
+   .flexora-membership-elite {
+     transform: none;
+   }
+
+   .flexora-bento {
+     grid-template-columns: 1fr;
+   }
+
+   .flexora-bento-large {
+     grid-column: span 1;
+     min-height: 260px;
+   }
+
+   .flexora-quote-section {
+     padding: 80px 20px;
+   }
+
+   .flexora-cta-actions .btn {
+     width: 100%;
+   }
+
+ }
+
+ /* ================= MEMBERSHIPS PAGE ================= */
+
+ .flexora-memberships-page {
+   min-height: 100vh;
+   padding: 45px 0 70px;
+   background: var(--flexora-bg);
+ }
+
+
+ /* Page Header */
+
+ .flexora-page-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   gap: 20px;
+   margin-bottom: 40px;
+ }
+
+ .flexora-breadcrumb {
+   display: flex;
+   gap: 8px;
+   margin-bottom: 12px;
+   font-size: 13px;
+   color: var(--flexora-text-muted);
+ }
+
+ .flexora-breadcrumb a {
+   color: var(--flexora-accent-light);
+   text-decoration: none;
+ }
+
+ .flexora-page-header h1 {
+   margin: 0;
+   font-size: 32px;
+   font-weight: 700;
+   color: var(--flexora-text);
+ }
+
+ .flexora-page-header p {
+   margin: 8px 0 0;
+   color: var(--flexora-text-muted);
+ }
+
+
+ /* Add Button */
+
+ .flexora-add-btn {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 11px 18px;
+   border-radius: 8px;
+   background: var(--flexora-accent);
+   color: white;
+   text-decoration: none;
+   font-size: 14px;
+   font-weight: 600;
+   transition: 0.25s ease;
+ }
+
+ .flexora-add-btn:hover {
+   color: white;
+   transform: translateY(-2px);
+   box-shadow: 0 8px 25px var(--flexora-accent-glow);
+ }
+
+
+ /* Membership Card */
+
+ .flexora-membership-card {
+   height: 100%;
+   padding: 25px;
+   border: 1px solid var(--flexora-card-border);
+   border-radius: var(--flexora-radius);
+   background: var(--flexora-card);
+   transition: 0.3s ease;
+   position: relative;
+   overflow: hidden;
+ }
+
+ .flexora-membership-card:hover {
+   transform: translateY(-5px);
+   border-color: rgba(139, 92, 246, 0.5);
+   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+ }
+
+
+ /* Elite Highlight */
+
+ .flexora-membership-card.elite-card {
+   border-color: rgba(139, 92, 246, 0.55);
+   box-shadow: 0 0 30px rgba(139, 92, 246, 0.12);
+ }
+
+
+ /* Card Top */
+
+ .flexora-membership-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .flexora-membership-icon {
+   width: 48px;
+   height: 48px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 12px;
+   background: rgba(139, 92, 246, 0.12);
+   color: var(--flexora-accent-light);
+   font-size: 21px;
+ }
+
+ .flexora-status {
+   padding: 5px 10px;
+   border-radius: 20px;
+   background: rgba(34, 197, 94, 0.12);
+   color: #4ade80;
+   font-size: 11px;
+   font-weight: 600;
+ }
+
+
+ /* Plan Name */
+
+ .flexora-membership-card h2 {
+   margin: 22px 0 8px;
+   color: var(--flexora-text);
+   font-size: 24px;
+ }
+
+ .flexora-plan-description {
+   min-height: 42px;
+   margin-bottom: 20px;
+   color: var(--flexora-text-muted);
+   font-size: 13px;
+   line-height: 1.6;
+ }
+
+
+ /* Price */
+
+ .flexora-price {
+   display: flex;
+   align-items: baseline;
+   gap: 3px;
+   margin-bottom: 22px;
+ }
+
+ .flexora-price .currency {
+   font-size: 18px;
+   color: var(--flexora-accent-light);
+ }
+
+ .flexora-price .amount {
+   font-size: 32px;
+   font-weight: 700;
+   color: var(--flexora-text);
+ }
+
+ .flexora-price .duration {
+   font-size: 12px;
+   color: var(--flexora-text-muted);
+ }
+
+
+ /* Duration */
+
+ .flexora-duration {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 13px 0;
+   border-top: 1px solid var(--flexora-card-border);
+   border-bottom: 1px solid var(--flexora-card-border);
+   font-size: 13px;
+ }
+
+ .flexora-duration span {
+   color: var(--flexora-text-muted);
+ }
+
+ .flexora-duration span i {
+   margin-right: 5px;
+ }
+
+ .flexora-duration strong {
+   color: var(--flexora-text);
+ }
+
+
+ /* Facilities */
+
+ .flexora-facilities {
+   padding: 22px 0;
+ }
+
+ .flexora-facilities h4 {
+   margin-bottom: 14px;
+   color: var(--flexora-text);
+   font-size: 14px;
+ }
+
+ .flexora-facilities div {
+   display: flex;
+   align-items: center;
+   gap: 9px;
+   margin-bottom: 11px;
+   color: var(--flexora-text-muted);
+   font-size: 13px;
+ }
+
+ .flexora-facilities i {
+   color: var(--flexora-accent-light);
+   font-size: 13px;
+ }
+
+
+ /* View Plan Button */
+
+ .flexora-plan-btn {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 9px;
+   padding: 12px;
+   border: 1px solid rgba(139, 92, 246, 0.5);
+   border-radius: 8px;
+   color: var(--flexora-text);
+   text-decoration: none;
+   font-size: 13px;
+   font-weight: 600;
+   transition: 0.25s ease;
+ }
+
+ .flexora-plan-btn:hover {
+   background: var(--flexora-accent);
+   border-color: var(--flexora-accent);
+   color: white;
+ }
+
+
+ /* Bottom Info */
+
+ .flexora-membership-info {
+   display: flex;
+   align-items: center;
+   gap: 18px;
+   margin-top: 45px;
+   padding: 22px;
+   border: 1px solid var(--flexora-card-border);
+   border-radius: var(--flexora-radius);
+   background: var(--flexora-bg-secondary);
+ }
+
+ .flexora-info-icon {
+   width: 45px;
+   height: 45px;
+   flex-shrink: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+   background: rgba(139, 92, 246, 0.12);
+   color: var(--flexora-accent-light);
+   font-size: 20px;
+ }
+
+ .flexora-membership-info h3 {
+   margin: 0 0 5px;
+   font-size: 15px;
+   color: var(--flexora-text);
+ }
+
+ .flexora-membership-info p {
+   margin: 0;
+   color: var(--flexora-text-muted);
+   font-size: 12px;
+   line-height: 1.6;
+ }
+
+
+ /* Responsive */
+
+ @media (max-width: 768px) {
+
+   .flexora-page-header {
+     align-items: flex-start;
+     flex-direction: column;
+   }
+
+   .flexora-page-header h1 {
+     font-size: 27px;
+   }
+
+   .flexora-membership-card {
+     padding: 22px;
+   }
+
+   .flexora-membership-info {
+     align-items: flex-start;
+   }
+ }
+
+
+
+ /* ================= MEMBERSHIP SHOW PAGE ================= */
+
+ .flexora-membership-show {
+   min-height: 100vh;
+   padding: 45px 0 70px;
+   background: var(--flexora-bg);
+ }
+
+
+ /* Breadcrumb */
+
+ .flexora-membership-show .flexora-breadcrumb {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   margin-bottom: 25px;
+   color: var(--flexora-text-muted);
+   font-size: 13px;
+ }
+
+ .flexora-membership-show .flexora-breadcrumb a {
+   color: var(--flexora-accent-light);
+   text-decoration: none;
+ }
+
+
+ /* Main Card */
+
+ .flexora-plan-details-card {
+   padding: 30px;
+   border: 1px solid var(--flexora-card-border);
+   border-radius: var(--flexora-radius);
+   background: var(--flexora-card);
+   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+ }
+
+
+ /* Header */
+
+ .flexora-plan-details-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   padding-bottom: 28px;
+   border-bottom: 1px solid var(--flexora-card-border);
+ }
+
+ .flexora-plan-title {
+   display: flex;
+   align-items: center;
+   gap: 18px;
+ }
+
+ .flexora-membership-icon {
+   width: 58px;
+   height: 58px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 14px;
+   background: rgba(139, 92, 246, 0.12);
+   color: var(--flexora-accent-light);
+   font-size: 24px;
+ }
+
+ .flexora-small-label {
+   display: block;
+   margin-bottom: 5px;
+   color: var(--flexora-text-muted);
+   font-size: 10px;
+   font-weight: 600;
+   letter-spacing: 1px;
+ }
+
+ .flexora-plan-title h1 {
+   margin: 0;
+   color: var(--flexora-text);
+   font-size: 30px;
+ }
+
+
+ /* Status */
+
+ .flexora-status {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 7px 12px;
+   border-radius: 20px;
+   font-size: 11px;
+   font-weight: 600;
+   text-transform: capitalize;
+ }
+
+ .flexora-status i {
+   font-size: 6px;
+ }
+
+ .status-active {
+   background: rgba(34, 197, 94, 0.12);
+   color: #4ade80;
+ }
+
+ .status-inactive {
+   background: rgba(239, 68, 68, 0.12);
+   color: #f87171;
+ }
+
+
+ /* Description */
+
+ .flexora-plan-description-box {
+   padding: 25px 0;
+ }
+
+ .flexora-plan-description-box p {
+   max-width: 750px;
+   margin: 8px 0 0;
+   color: var(--flexora-text-muted);
+   font-size: 14px;
+   line-height: 1.7;
+ }
+
+
+ /* Information Grid */
+
+ .flexora-plan-info-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 15px;
+   margin-bottom: 35px;
+ }
+
+ .flexora-plan-info-item {
+   display: flex;
+   align-items: center;
+   gap: 13px;
+   padding: 18px;
+   border: 1px solid var(--flexora-card-border);
+   border-radius: 12px;
+   background: var(--flexora-bg-secondary);
+ }
+
+ .flexora-info-icon {
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   border-radius: 10px;
+   background: rgba(139, 92, 246, 0.1);
+   color: var(--flexora-accent-light);
+ }
+
+ .flexora-plan-info-item span {
+   display: block;
+   margin-bottom: 4px;
+   color: var(--flexora-text-muted);
+   font-size: 11px;
+ }
+
+ .flexora-plan-info-item strong {
+   color: var(--flexora-text);
+   font-size: 15px;
+   text-transform: capitalize;
+ }
+
+
+ /* Facilities */
+
+ .flexora-plan-facilities {
+   padding-top: 5px;
+ }
+
+ .flexora-section-title {
+   margin-bottom: 18px;
+ }
+
+ .flexora-section-title h2 {
+   margin: 4px 0 0;
+   color: var(--flexora-text);
+   font-size: 19px;
+ }
+
+ .flexora-facility-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 12px;
+ }
+
+ .flexora-facility-item {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   padding: 13px 15px;
+   border: 1px solid var(--flexora-card-border);
+   border-radius: 9px;
+   background: var(--flexora-bg-secondary);
+   color: var(--flexora-text-muted);
+   font-size: 13px;
+ }
+
+ .flexora-facility-item i {
+   color: var(--flexora-accent-light);
+   font-size: 14px;
+ }
+
+
+ /* Actions */
+
+ .flexora-plan-actions {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   margin-top: 35px;
+   padding-top: 25px;
+   border-top: 1px solid var(--flexora-card-border);
+ }
+
+ .flexora-plan-actions form {
+   margin: 0;
+ }
+
+ .flexora-edit-btn,
+ .flexora-delete-btn,
+ .flexora-back-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   padding: 11px 17px;
+   border-radius: 8px;
+   font-size: 13px;
+   font-weight: 600;
+   text-decoration: none;
+   transition: 0.25s ease;
+   cursor: pointer;
+ }
+
+ .flexora-edit-btn {
+   background: var(--flexora-accent);
+   color: white;
+   border: 1px solid var(--flexora-accent);
+ }
+
+ .flexora-edit-btn:hover {
+   color: white;
+   transform: translateY(-2px);
+   box-shadow: 0 8px 25px var(--flexora-accent-glow);
+ }
+
+ .flexora-delete-btn {
+   background: rgba(239, 68, 68, 0.08);
+   color: #f87171;
+   border: 1px solid rgba(239, 68, 68, 0.25);
+ }
+
+ .flexora-delete-btn:hover {
+   background: rgba(239, 68, 68, 0.15);
+ }
+
+ .flexora-back-btn {
+   margin-left: auto;
+   background: transparent;
+   color: var(--flexora-text-muted);
+   border: 1px solid var(--flexora-card-border);
+ }
+
+ .flexora-back-btn:hover {
+   color: var(--flexora-text);
+   border-color: rgba(255, 255, 255, 0.2);
+ }
+
+
+ /* Responsive */
+
+ @media (max-width: 768px) {
+
+   .flexora-plan-details-card {
+     padding: 22px;
+   }
+
+   .flexora-plan-details-header {
+     align-items: flex-start;
+     flex-direction: column;
+   }
+
+   .flexora-plan-title h1 {
+     font-size: 26px;
+   }
+
+   .flexora-plan-info-grid {
+     grid-template-columns: 1fr;
+   }
+
+   .flexora-facility-grid {
+     grid-template-columns: 1fr;
+   }
+
+   .flexora-plan-actions {
+     flex-wrap: wrap;
+   }
+
+   .flexora-back-btn {
+     margin-left: 0;
+     width: 100%;
+   }
+ }
+
+ /* ================================
+   CREATE MEMBERSHIP
+================================ */
+
+ .membership-page {
+   padding: 25px;
+   color: #fff;
+ }
+
+ @media (min-width : 1200px) {
+   .offset-custom {
+     margin-left: 13.5%;
+   }
+ }
+
+ /* Page Header */
+
+ .page-header {
+   margin-bottom: 25px;
+ }
+
+ .page-header h1 {
+   font-size: 24px;
+   font-weight: 600;
+   margin-bottom: 7px;
+ }
+
+ .page-header p {
+   font-size: 12px;
+   color: #737b8c;
+ }
+
+
+ /* Main Card */
+
+ .membership-card {
+   background: #111827;
+   border: 1px solid #202938;
+   border-radius: 10px;
+   padding: 28px;
+   max-width: 900px;
+ }
+
+
+ /* Card Header */
+
+ .card-header {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   margin-bottom: 28px;
+ }
+
+ .card-icon {
+   width: 42px;
+   height: 42px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background: rgba(124, 58, 237, 0.15);
+   color: #8b5cf6;
+
+   border-radius: 9px;
+
+   font-size: 22px;
+ }
+
+ .card-header h2 {
+   font-size: 17px;
+   font-weight: 600;
+   margin-bottom: 4px;
+ }
+
+ .card-header p {
+   font-size: 12px;
+   color: #737b8c;
+ }
+
+
+ /* Form Grid */
+
+ .membership-form-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+ }
+
+
+ /* Form Fields */
+
+ .form-field {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .form-field label,
+ .section-label {
+   color: #b9c0cc;
+   font-size: 12px;
+   margin-bottom: 8px;
+ }
+
+
+ .form-field input,
+ .form-field select,
+ .form-field textarea {
+   width: 100%;
+
+   background: #0b111c;
+   color: #fff;
+
+   border: 1px solid #293241;
+   border-radius: 6px;
+
+   padding: 11px 12px;
+
+   font-size: 12px;
+   outline: none;
+
+   transition: 0.2s;
+ }
+
+
+ .form-field input::placeholder,
+ .form-field textarea::placeholder {
+   color: #596273;
+ }
+
+
+ .form-field input:focus,
+ .form-field select:focus,
+ .form-field textarea:focus {
+   border-color: #7c3aed;
+   box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
+ }
+
+
+ .form-field select {
+   cursor: pointer;
+ }
+
+
+ .form-field select option {
+   background: #111827;
+   color: #fff;
+ }
+
+
+ /* Facilities */
+
+ .facilities-container {
+   margin-top: 25px;
+ }
+
+
+ .facilities-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+ }
+
+
+ .facility input {
+   display: none;
+ }
+
+
+ .facility label {
+   display: block;
+
+   padding: 12px;
+
+   background: #0b111c;
+   border: 1px solid #293241;
+   border-radius: 6px;
+
+   color: #9da5b3;
+
+   font-size: 12px;
+
+   cursor: pointer;
+
+   transition: 0.2s;
+ }
+
+
+ .facility label:hover {
+   border-color: #6d28d9;
+   color: #fff;
+ }
+
+
+ .facility input:checked+label {
+   background: rgba(124, 58, 237, 0.15);
+   border-color: #7c3aed;
+   color: #b794ff;
+ }
+
+
+ /* Description */
+
+ .description-field {
+   margin-top: 25px;
+ }
+
+
+ .description-field textarea {
+   min-height: 100px;
+   resize: vertical;
+ }
+
+
+ /* Buttons */
+
+ .form-actions {
+   display: flex;
+   justify-content: flex-end;
+   gap: 12px;
+
+   margin-top: 25px;
+   padding-top: 20px;
+
+   border-top: 1px solid #202938;
+ }
+
+
+ .cancel-btn,
+ .submit-btn {
+   padding: 10px 20px;
+
+   border-radius: 6px;
+
+   font-size: 12px;
+   cursor: pointer;
+
+   transition: 0.2s;
+ }
+
+
+ .cancel-btn {
+   background: transparent;
+   color: #a5adba;
+
+   border: 1px solid #293241;
+ }
+
+
+ .cancel-btn:hover {
+   background: #1a2230;
+   color: #fff;
+ }
+
+
+ .submit-btn {
+   background: #7c3aed;
+   color: #fff;
+
+   border: 1px solid #7c3aed;
+ }
+
+
+ .submit-btn:hover {
+   background: #6d28d9;
+ }
+
+
+ /* ================================
+   RESPONSIVE
+================================ */
+
+ @media (max-width: 700px) {
+
+   .membership-page {
+     padding: 15px;
+   }
+
+   .membership-card {
+     padding: 20px;
+   }
+
+   .membership-form-grid {
+     grid-template-columns: 1fr;
+   }
+
+   .facilities-grid {
+     grid-template-columns: 1fr 1fr;
+   }
+ }
+
+
+ @media (max-width: 450px) {
+
+   .facilities-grid {
+     grid-template-columns: 1fr;
+   }
+
+   .form-actions {
+     flex-direction: column;
+   }
+
+   .cancel-btn,
+   .submit-btn {
+     width: 100%;
+   }
+ }
+
+ /* =========================================
+   FLEXORA TRAINERS PAGE
+========================================= */
+
+ .flexora-trainers-page {
+   min-height: 100vh;
+   padding: 25px 0 40px;
+   background: #080d16;
+   color: #ffffff;
+ }
+
+
+ /* =========================================
+   PAGE HEADER
+========================================= */
+
+ .flexora-trainers-page .flexora-page-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+
+   margin-bottom: 28px;
+ }
+
+ .flexora-trainers-page .flexora-page-header h1 {
+   margin: 8px 0 5px;
+
+   font-size: 27px;
+   font-weight: 700;
+   color: #ffffff;
+ }
+
+ .flexora-trainers-page .flexora-page-header p {
+   margin: 0;
+
+   color: #7f899b;
+   font-size: 13px;
+ }
+
+
+ /* Breadcrumb */
+
+ .flexora-trainers-page .flexora-breadcrumb {
+   display: flex;
+   gap: 7px;
+
+   font-size: 11px;
+   color: #697386;
+ }
+
+ .flexora-trainers-page .flexora-breadcrumb a {
+   color: #8c95a7;
+   text-decoration: none;
+ }
+
+ .flexora-trainers-page .flexora-breadcrumb a:hover {
+   color: #7c3aed;
+ }
+
+
+ /* =========================================
+   ADD BUTTON
+========================================= */
+
+ .flexora-trainers-page .flexora-add-btn {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+
+   padding: 10px 17px;
+
+   background: #6d28d9;
+   color: #ffffff;
+
+   border-radius: 6px;
+
+   text-decoration: none;
+
+   font-size: 12px;
+   font-weight: 600;
+
+   transition: 0.2s;
+ }
+
+ .flexora-trainers-page .flexora-add-btn:hover {
+   background: #7c3aed;
+   color: #ffffff;
+ }
+
+
+ /* =========================================
+   TRAINER SUMMARY
+========================================= */
+
+ .flexora-trainer-summary {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+
+   width: fit-content;
+
+   margin-bottom: 24px;
+
+   padding: 14px 22px;
+
+   background: #111927;
+
+   border: 1px solid #202b3d;
+
+   border-radius: 8px;
+ }
+
+
+ .flexora-summary-icon {
+   width: 42px;
+   height: 42px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background: rgba(124, 58, 237, 0.15);
+
+   border-radius: 7px;
+
+   color: #8b5cf6;
+
+   font-size: 19px;
+ }
+
+
+ .flexora-trainer-summary span {
+   display: block;
+
+   color: #7f899b;
+
+   font-size: 11px;
+
+   margin-bottom: 3px;
+ }
+
+
+ .flexora-trainer-summary strong {
+   display: block;
+
+   font-size: 20px;
+   color: #ffffff;
+ }
+
+
+ /* =========================================
+   TRAINER CARD
+========================================= */
+
+ .flexora-trainer-card {
+   height: 100%;
+
+   padding: 21px;
+
+   background: #111927;
+
+   border: 1px solid #202b3d;
+
+   border-radius: 9px;
+
+   transition: 0.2s;
+
+   display: flex;
+   flex-direction: column;
+ }
+
+
+ .flexora-trainer-card:hover {
+   border-color: #49318a;
+
+   transform: translateY(-2px);
+
+   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+ }
+
+
+ /* =========================================
+   CARD TOP
+========================================= */
+
+ .flexora-trainer-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   margin-bottom: 18px;
+ }
+
+
+ /* Trainer Icon */
+
+ .flexora-trainer-icon {
+   width: 52px;
+   height: 52px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background: rgba(124, 58, 237, 0.14);
+
+   border: 1px solid rgba(124, 58, 237, 0.25);
+
+   border-radius: 50%;
+
+   color: #8b5cf6;
+
+   font-size: 23px;
+ }
+
+
+ /* Status */
+
+ .flexora-trainer-status {
+   padding: 5px 10px;
+
+   background: rgba(34, 197, 94, 0.12);
+
+   color: #4ade80;
+
+   border-radius: 4px;
+
+   font-size: 10px;
+   font-weight: 600;
+ }
+
+
+ /* =========================================
+   TRAINER NAME
+========================================= */
+
+ .flexora-trainer-card h2 {
+   margin: 0 0 17px;
+
+   font-size: 18px;
+   font-weight: 650;
+
+   color: #ffffff;
+ }
+
+
+ /* =========================================
+   TRAINER DETAILS
+========================================= */
+
+ .flexora-trainer-details {
+   display: flex;
+   flex-direction: column;
+
+   gap: 11px;
+ }
+
+
+ .flexora-trainer-details div {
+   display: flex;
+   align-items: center;
+
+   gap: 10px;
+
+   font-size: 12px;
+
+   color: #8b95a7;
+ }
+
+
+ .flexora-trainer-details i {
+   width: 18px;
+
+   color: #7c3aed;
+
+   font-size: 13px;
+ }
+
+
+ /* =========================================
+   DIVIDER
+========================================= */
+
+ .flexora-trainer-divider {
+   height: 1px;
+
+   background: #202b3d;
+
+   margin: 20px 0 15px;
+ }
+
+
+ /* =========================================
+   VIEW DETAILS BUTTON
+========================================= */
+
+ .flexora-trainer-btn {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   color: #b7becb;
+
+   text-decoration: none;
+
+   font-size: 12px;
+   font-weight: 600;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-trainer-btn i {
+   color: #8b5cf6;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-trainer-btn:hover {
+   color: #ffffff;
+ }
+
+
+ .flexora-trainer-btn:hover i {
+   transform: translateX(4px);
+ }
+
+
+ /* =========================================
+   EMPTY STATE
+========================================= */
+
+ .flexora-empty-state {
+   width: 100%;
+
+   padding: 60px 20px;
+
+   text-align: center;
+
+   background: #111927;
+
+   border: 1px solid #202b3d;
+
+   border-radius: 9px;
+ }
+
+
+ .flexora-empty-icon {
+   width: 55px;
+   height: 55px;
+
+   margin: 0 auto 15px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 50%;
+
+   background: rgba(124, 58, 237, 0.12);
+
+   color: #8b5cf6;
+
+   font-size: 22px;
+ }
+
+
+ .flexora-empty-state h3 {
+   margin-bottom: 6px;
+
+   font-size: 17px;
+ }
+
+
+ .flexora-empty-state p {
+   color: #7f899b;
+
+   font-size: 12px;
+
+   margin-bottom: 20px;
+ }
+
+
+ /* =========================================
+   RESPONSIVE
+========================================= */
+
+ @media (max-width: 768px) {
+
+   .flexora-trainers-page {
+     padding-top: 20px;
+   }
+
+   .flexora-trainers-page .flexora-page-header {
+     align-items: flex-start;
+     flex-direction: column;
+
+     gap: 18px;
+   }
+
+   .flexora-trainers-page .flexora-add-btn {
+     width: 100%;
+
+     justify-content: center;
+   }
+
+   .flexora-trainer-summary {
+     width: 100%;
+
+     box-sizing: border-box;
+   }
+ }
+
+
+ /* =========================================
+   TRAINER DETAILS PAGE
+========================================= */
+
+ .flexora-trainer-details-page {
+   min-height: 100vh;
+   padding: 25px 0 40px;
+
+   background: #080d16;
+   color: #ffffff;
+ }
+
+
+ /* =========================================
+   PAGE HEADER
+========================================= */
+
+ .flexora-trainer-details-page .flexora-page-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+
+   margin-bottom: 28px;
+ }
+
+ .flexora-trainer-details-page .flexora-page-header h1 {
+   margin: 8px 0 5px;
+
+   font-size: 27px;
+   font-weight: 700;
+ }
+
+ .flexora-trainer-details-page .flexora-page-header p {
+   margin: 0;
+
+   color: #7f899b;
+   font-size: 13px;
+ }
+
+
+ /* =========================================
+   BREADCRUMB
+========================================= */
+
+ .flexora-trainer-details-page .flexora-breadcrumb {
+   display: flex;
+   gap: 7px;
+
+   font-size: 11px;
+   color: #697386;
+ }
+
+ .flexora-trainer-details-page .flexora-breadcrumb a {
+   color: #8c95a7;
+   text-decoration: none;
+ }
+
+ .flexora-trainer-details-page .flexora-breadcrumb a:hover {
+   color: #8b5cf6;
+ }
+
+
+ /* =========================================
+   BACK BUTTON
+========================================= */
+
+ .flexora-back-btn {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+
+   padding: 10px 16px;
+
+   border: 1px solid #293447;
+   border-radius: 6px;
+
+   color: #b7becb;
+
+   text-decoration: none;
+
+   font-size: 12px;
+   font-weight: 600;
+
+   background: #111927;
+
+   transition: 0.2s;
+ }
+
+ .flexora-back-btn:hover {
+   color: #ffffff;
+
+   border-color: #49318a;
+ }
+
+
+ /* =========================================
+   PROFILE CARD
+========================================= */
+
+ .flexora-trainer-profile-card {
+   max-width: 1000px;
+
+   margin: 0 auto;
+
+   background: #111927;
+
+   border: 1px solid #202b3d;
+
+   border-radius: 10px;
+
+   overflow: hidden;
+ }
+
+
+ /* =========================================
+   PROFILE TOP
+========================================= */
+
+ .flexora-profile-top {
+   display: flex;
+   align-items: center;
+
+   gap: 20px;
+
+   padding: 28px;
+
+   border-bottom: 1px solid #202b3d;
+
+   background: #121b2a;
+ }
+
+
+ /* Trainer Icon */
+
+ .flexora-profile-icon {
+   width: 75px;
+   height: 75px;
+
+   flex-shrink: 0;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 50%;
+
+   background: rgba(124, 58, 237, 0.15);
+
+   border: 1px solid rgba(124, 58, 237, 0.3);
+
+   color: #8b5cf6;
+
+   font-size: 31px;
+ }
+
+
+ .flexora-profile-heading h2 {
+   margin: 0 0 8px;
+
+   font-size: 23px;
+   font-weight: 650;
+
+   color: #ffffff;
+ }
+
+
+ .flexora-profile-role {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+
+   color: #8b95a7;
+
+   font-size: 12px;
+ }
+
+
+ /* =========================================
+   PROFILE INFORMATION
+========================================= */
+
+ .flexora-profile-section {
+   padding: 28px;
+ }
+
+
+ .flexora-profile-section h3 {
+   display: flex;
+   align-items: center;
+   gap: 9px;
+
+   margin: 0 0 22px;
+
+   font-size: 15px;
+   font-weight: 600;
+
+   color: #ffffff;
+ }
+
+
+ .flexora-profile-section h3 i {
+   color: #8b5cf6;
+ }
+
+
+ /* Information Grid */
+
+ .flexora-profile-grid {
+   display: grid;
+
+   grid-template-columns: 1fr 1fr;
+
+   gap: 16px;
+ }
+
+
+ /* Information Item */
+
+ .flexora-profile-item {
+   padding: 17px;
+
+   background: #0d1522;
+
+   border: 1px solid #202b3d;
+
+   border-radius: 7px;
+ }
+
+
+ .profile-label {
+   display: block;
+
+   margin-bottom: 7px;
+
+   color: #6f7a8d;
+
+   font-size: 11px;
+ }
+
+
+ .flexora-profile-item strong {
+   display: block;
+
+   color: #dce1e9;
+
+   font-size: 13px;
+
+   font-weight: 500;
+
+   word-break: break-word;
+ }
+
+
+ /* =========================================
+   ACTIONS
+========================================= */
+
+ .flexora-profile-actions {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+
+   gap: 12px;
+
+   padding: 20px 28px;
+
+   border-top: 1px solid #202b3d;
+
+   background: #0e1623;
+ }
+
+
+ .flexora-profile-actions form {
+   margin: 0;
+ }
+
+
+ /* Edit */
+
+ .flexora-edit-btn {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+
+   padding: 10px 18px;
+
+   border-radius: 6px;
+
+   background: #6d28d9;
+
+   color: #ffffff;
+
+   text-decoration: none;
+
+   font-size: 12px;
+   font-weight: 600;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-edit-btn:hover {
+   background: #7c3aed;
+   color: #ffffff;
+ }
+
+
+ /* Delete */
+
+ .flexora-delete-btn {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+
+   padding: 10px 18px;
+
+   border: 1px solid #54252d;
+
+   border-radius: 6px;
+
+   background: rgba(220, 38, 38, 0.10);
+
+   color: #f87171;
+
+   font-size: 12px;
+   font-weight: 600;
+
+   cursor: pointer;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-delete-btn:hover {
+   background: rgba(220, 38, 38, 0.18);
+
+   border-color: #7f303a;
+
+   color: #ff8585;
+ }
+
+
+ /* =========================================
+   RESPONSIVE
+========================================= */
+
+ @media (max-width: 768px) {
+
+   .flexora-trainer-details-page .flexora-page-header {
+     flex-direction: column;
+     align-items: flex-start;
+
+     gap: 18px;
+   }
+
+   .flexora-back-btn {
+     width: 100%;
+
+     justify-content: center;
+
+     box-sizing: border-box;
+   }
+
+
+   .flexora-profile-top {
+     padding: 22px;
+
+   }
+
+
+   .flexora-profile-section {
+     padding: 22px;
+   }
+
+
+   .flexora-profile-grid {
+     grid-template-columns: 1fr;
+   }
+
+
+   .flexora-profile-actions {
+     padding: 18px 22px;
+
+     flex-direction: column;
+   }
+
+
+   .flexora-edit-btn,
+   .flexora-delete-btn {
+     width: 100%;
+
+     justify-content: center;
+
+     box-sizing: border-box;
+   }
+
+ }
+
+ /* =========================================
+   CREATE TRAINER PAGE
+========================================= */
+
+ .flexora-trainer-form-page {
+   min-height: 100vh;
+
+   padding: 25px 0 40px;
+
+   background: #080d16;
+
+   color: #ffffff;
+ }
+
+
+ /* =========================================
+   PAGE HEADER
+========================================= */
+
+ .flexora-trainer-form-page .flexora-page-header {
+   margin-bottom: 28px;
+ }
+
+ .flexora-trainer-form-page .flexora-page-header h1 {
+   margin: 8px 0 5px;
+
+   font-size: 27px;
+   font-weight: 700;
+
+   color: #ffffff;
+ }
+
+ .flexora-trainer-form-page .flexora-page-header p {
+   margin: 0;
+
+   color: #7f899b;
+
+   font-size: 13px;
+ }
+
+
+ /* Breadcrumb */
+
+ .flexora-trainer-form-page .flexora-breadcrumb {
+   display: flex;
+   gap: 7px;
+
+   font-size: 11px;
+
+   color: #697386;
+ }
+
+ .flexora-trainer-form-page .flexora-breadcrumb a {
+   color: #8c95a7;
+
+   text-decoration: none;
+ }
+
+ .flexora-trainer-form-page .flexora-breadcrumb a:hover {
+   color: #8b5cf6;
+ }
+
+
+ /* =========================================
+   FORM CARD
+========================================= */
+
+ .flexora-trainer-form-card {
+   max-width: 900px;
+
+   margin: 0 auto;
+
+   background: #111927;
+
+   border: 1px solid #202b3d;
+
+   border-radius: 10px;
+
+   overflow: hidden;
+ }
+
+
+ /* =========================================
+   CARD HEADER
+========================================= */
+
+ .flexora-form-card-header {
+   display: flex;
+
+   align-items: center;
+
+   gap: 15px;
+
+   padding: 24px 28px;
+
+   background: #121b2a;
+
+   border-bottom: 1px solid #202b3d;
+ }
+
+
+ .flexora-form-icon {
+   width: 50px;
+   height: 50px;
+
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   flex-shrink: 0;
+
+   border-radius: 8px;
+
+   background: rgba(124, 58, 237, 0.14);
+
+   border: 1px solid rgba(124, 58, 237, 0.25);
+
+   color: #8b5cf6;
+
+   font-size: 21px;
+ }
+
+
+ .flexora-form-card-header h2 {
+   margin: 0 0 5px;
+
+   font-size: 18px;
+
+   font-weight: 600;
+
+   color: #ffffff;
+ }
+
+
+ .flexora-form-card-header p {
+   margin: 0;
+
+   color: #7f899b;
+
+   font-size: 12px;
+ }
+
+
+ /* =========================================
+   FORM
+========================================= */
+
+ .flexora-trainer-form-card form {
+   padding: 28px;
+ }
+
+
+ /* Form Grid */
+
+ .flexora-trainer-form-grid {
+   display: grid;
+
+   grid-template-columns: 1fr 1fr;
+
+   gap: 22px;
+ }
+
+
+ /* =========================================
+   FORM FIELD
+========================================= */
+
+ .flexora-form-field {
+   display: flex;
+
+   flex-direction: column;
+ }
+
+
+ .flexora-form-field label {
+   margin-bottom: 8px;
+
+   color: #aeb6c4;
+
+   font-size: 12px;
+
+   font-weight: 600;
+ }
+
+
+ /* =========================================
+   INPUT
+========================================= */
+
+ .flexora-input-wrapper {
+   position: relative;
+
+   display: flex;
+
+   align-items: center;
+ }
+
+
+ .flexora-input-wrapper i {
+   position: absolute;
+
+   left: 13px;
+
+   color: #6f7a8d;
+
+   font-size: 14px;
+
+   pointer-events: none;
+ }
+
+
+ .flexora-input-wrapper input {
+   width: 100%;
+
+   box-sizing: border-box;
+
+   padding: 11px 13px 11px 38px;
+
+   background: #0d1522;
+
+   border: 1px solid #293447;
+
+   border-radius: 6px;
+
+   color: #ffffff;
+
+   font-size: 12px;
+
+   outline: none;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-input-wrapper input::placeholder {
+   color: #596579;
+ }
+
+
+ .flexora-input-wrapper input:focus {
+   border-color: #7c3aed;
+
+   box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.10);
+ }
+
+
+ .flexora-input-wrapper input:focus+i {
+   color: #8b5cf6;
+ }
+
+
+ /* Remove number arrows */
+
+ .flexora-input-wrapper input::-webkit-outer-spin-button,
+ .flexora-input-wrapper input::-webkit-inner-spin-button {
+   margin: 0;
+ }
+
+
+ /* =========================================
+   ACTIONS
+========================================= */
+
+ .flexora-form-actions {
+   display: flex;
+
+   justify-content: flex-end;
+
+   gap: 12px;
+
+   margin-top: 30px;
+
+   padding-top: 22px;
+
+   border-top: 1px solid #202b3d;
+ }
+
+
+ /* Cancel */
+
+ .flexora-cancel-btn {
+   padding: 10px 20px;
+
+   background: #171f2c;
+
+   border: 1px solid #293447;
+
+   border-radius: 6px;
+
+   color: #aeb6c4;
+
+   font-size: 12px;
+
+   font-weight: 600;
+
+   cursor: pointer;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-cancel-btn:hover {
+   background: #1c2635;
+
+   color: #ffffff;
+ }
+
+
+ /* Submit */
+
+ .flexora-submit-btn {
+   display: inline-flex;
+
+   align-items: center;
+
+   gap: 8px;
+
+   padding: 10px 20px;
+
+   background: #6d28d9;
+
+   border: none;
+
+   border-radius: 6px;
+
+   color: #ffffff;
+
+   font-size: 12px;
+
+   font-weight: 600;
+
+   cursor: pointer;
+
+   transition: 0.2s;
+ }
+
+
+ .flexora-submit-btn:hover {
+   background: #7c3aed;
+ }
+
+
+ /* =========================================
+   RESPONSIVE
+========================================= */
+
+ @media (max-width: 768px) {
+
+   .flexora-trainer-form-page {
+     padding-top: 20px;
+   }
+
+   .flexora-trainer-form-card form {
+     padding: 22px;
+   }
+
+   .flexora-form-card-header {
+     padding: 20px 22px;
+   }
+
+   .flexora-trainer-form-grid {
+     grid-template-columns: 1fr;
+   }
+
+   .flexora-form-actions {
+     flex-direction: column;
+   }
+
+   .flexora-cancel-btn,
+   .flexora-submit-btn {
+     width: 100%;
+
+     justify-content: center;
+   }
+ }
+
+
+
+ /* ================================
+   MEMBERS PAGE
+================================ */
+
+ .flexora-members-page {
+   min-height: 100vh;
+   padding: 25px 0 40px;
+   background: #080d16;
+   color: #fff;
+ }
+
+
+ /* Members Grid */
+
+ .flexora-members-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
+ }
+
+
+ /* Member Card */
+
+ .flexora-member-card {
+   padding: 22px;
+   background: #111927;
+   border: 1px solid #202b3d;
+   border-radius: 10px;
+   transition: .2s;
+ }
+
+ .flexora-member-card:hover {
+   border-color: rgba(124, 58, 237, .5);
+   transform: translateY(-2px);
+ }
+
+
+ /* Card Top */
+
+ .flexora-member-top {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 20px;
+ }
+
+
+ /* Member Icon */
+
+ .flexora-member-icon {
+   width: 50px;
+   height: 50px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 8px;
+   background: rgba(124, 58, 237, .14);
+   border: 1px solid rgba(124, 58, 237, .25);
+
+   color: #8b5cf6;
+   font-size: 21px;
+ }
+
+
+ /* Member Status */
+
+ .flexora-member-status {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+
+   padding: 5px 9px;
+   border-radius: 5px;
+
+   background: rgba(34, 197, 94, .08);
+   border: 1px solid rgba(34, 197, 94, .15);
+
+   color: #7fd89a;
+   font-size: 10px;
+   font-weight: 600;
+ }
+
+ .flexora-member-status i {
+   font-size: 6px;
+ }
+
+
+ /* Member Information */
+
+ .flexora-member-info {
+   margin-bottom: 20px;
+ }
+
+ .flexora-member-info h2 {
+   margin: 0 0 16px;
+   color: #fff;
+   font-size: 17px;
+   font-weight: 600;
+ }
+
+ .flexora-member-detail {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+
+   margin-bottom: 11px;
+
+   color: #8993a5;
+   font-size: 12px;
+ }
+
+ .flexora-member-detail i {
+   width: 16px;
+   color: #7c3aed;
+   font-size: 13px;
+ }
+
+
+ /* View Member Button */
+
+ .flexora-member-view-btn {
+   width: 100%;
+   box-sizing: border-box;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   padding: 10px 12px;
+
+   background: #0d1522;
+   border: 1px solid #293447;
+   border-radius: 6px;
+
+   color: #aeb6c4;
+   text-decoration: none;
+
+   font-size: 11px;
+   font-weight: 600;
+   transition: .2s;
+ }
+
+ .flexora-member-view-btn:hover {
+   background: rgba(124, 58, 237, .08);
+   border-color: #7c3aed;
+   color: #fff;
+ }
+
+ .flexora-member-view-btn i {
+   color: #8b5cf6;
+   font-size: 13px;
+ }
+
+
+ /* ================================
+   RESPONSIVE
+================================ */
+
+ @media (max-width: 992px) {
+   .flexora-members-grid {
+     grid-template-columns: repeat(2, 1fr);
+   }
+ }
+
+ @media (max-width: 768px) {
+
+   .flexora-members-page {
+     padding-top: 20px;
+   }
+
+   .flexora-members-page .flexora-page-header {
+     align-items: flex-start;
+     flex-direction: column;
+     gap: 18px;
+   }
+
+   .flexora-members-page .flexora-add-btn {
+     width: 100%;
+     justify-content: center;
+   }
+
+   .flexora-members-grid {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ @media (max-width: 480px) {
+   .flexora-member-card {
+     padding: 18px;
+   }
+ }
+
+ 
+/* ================================
+    MEMBER DETAILS PAGE
+================================ */
+ .flexora-member-show {
+   min-height: 100vh;
+   padding: 25px 35px 50px;
+   background: #080d16;
+   color: #ffffff;
+ }
+
+ /* ========================================= PAGE HEADER ========================================= */
+ .flexora-member-show .flexora-page-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 30px;
+ }
+
+ .flexora-member-show .page-breadcrumb {
+   display: flex;
+   align-items: center;
+   gap: 9px;
+   margin-bottom: 10px;
+   color: #858da0;
+   font-size: 13px;
+ }
+
+ .flexora-member-show .page-breadcrumb i {
+   font-size: 9px;
+   color: #9b5cff;
+ }
+
+ .flexora-member-show .flexora-page-header h1 {
+   margin: 0;
+   font-size: 30px;
+   font-weight: 700;
+ }
+
+ .flexora-member-show .flexora-page-header p {
+   margin: 7px 0 0;
+   color: #8d95a8;
+   font-size: 14px;
+ }
+
+ .member-header-icon {
+   width: 55px;
+   height: 55px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 14px;
+   background: rgba(155, 92, 255, 0.12);
+   border: 1px solid rgba(155, 92, 255, 0.25);
+   color: #a970ff;
+   font-size: 22px;
+ }
+
+ /* ========================================= MAIN PROFILE CARD ========================================= */
+ .member-profile-card {
+   max-width: 1100px;
+   margin: 0 auto;
+   background: #101722;
+   border: 1px solid #202a3a;
+   border-radius: 18px;
+   overflow: hidden;
+   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+ }
+
+ /* ========================================= PROFILE HEADER ========================================= */
+ .member-profile-header {
+   display: flex;
+   align-items: center;
+   gap: 18px;
+   padding: 28px 30px;
+   background: linear-gradient(135deg, rgba(155, 92, 255, 0.14), rgba(155, 92, 255, 0.03));
+   border-bottom: 1px solid #202a3a;
+ }
+
+ .member-avatar {
+   width: 70px;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 18px;
+   background: linear-gradient(135deg, #8b4dff, #6332b8);
+   color: #ffffff;
+   font-size: 28px;
+   box-shadow: 0 8px 25px rgba(139, 77, 255, 0.25);
+ }
+
+ .member-profile-header h2 {
+   margin: 0 0 7px;
+   font-size: 24px;
+   font-weight: 700;
+ }
+
+ .member-profile-header p {
+   margin: 0;
+   color: #929bad;
+   font-size: 14px;
+ }
+
+ .member-profile-header p i {
+   margin-right: 6px;
+   color: #a970ff;
+ }
+
+ /* ========================================= SECTIONS ========================================= */
+ .member-section {
+   padding: 28px 30px;
+   border-bottom: 1px solid #202a3a;
+ }
+
+ .section-title {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 22px;
+ }
+
+ .section-title i {
+   color: #a970ff;
+   font-size: 17px;
+ }
+
+ .section-title h3 {
+   margin: 0;
+   font-size: 17px;
+   font-weight: 600;
+ }
+
+ /* ========================================= INFORMATION GRID ========================================= */
+ .member-info-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 14px;
+ }
+
+ .info-item {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   padding: 17px;
+   background: #0c131e;
+   border: 1px solid #202a3a;
+   border-radius: 12px;
+   transition: 0.2s ease;
+ }
+
+ .info-item:hover {
+   border-color: rgba(155, 92, 255, 0.4);
+   background: #101827;
+   transform: translateY(-1px);
+ }
+
+ .info-icon {
+   width: 42px;
+   height: 42px;
+   flex-shrink: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+   background: rgba(155, 92, 255, 0.11);
+   color: #a970ff;
+ }
+
+ .info-item span {
+   display: block;
+   margin-bottom: 5px;
+   color: #7f899c;
+   font-size: 12px;
+ }
+
+ .info-item strong {
+   display: block;
+   color: #ffffff;
+   font-size: 14px;
+   font-weight: 500;
+   word-break: break-word;
+ }
+
+ /* ========================================= ACTIONS ========================================= */
+ .member-actions {
+   padding: 30px;
+ }
+
+ .action-group {
+   margin-bottom: 28px;
+ }
+
+ .action-group:last-child {
+   margin-bottom: 0;
+ }
+
+ .action-group h4 {
+   display: flex;
+   align-items: center;
+   gap: 9px;
+   margin: 0 0 13px;
+   color: #c8ceda;
+   font-size: 14px;
+   font-weight: 600;
+ }
+
+ .action-group h4 i {
+   color: #a970ff;
+ }
+
+ .action-buttons {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+ }
+
+ .action-buttons form {
+   margin: 0;
+ }
+
+ /* ========================================= BUTTONS ========================================= */
+ .flexora-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   min-height: 40px;
+   padding: 9px 15px;
+   border-radius: 9px;
+   font-size: 13px;
+   font-weight: 500;
+   text-decoration: none;
+   cursor: pointer;
+   transition: all 0.2s ease;
+ }
+
+ .flexora-btn i {
+   font-size: 12px;
+ }
+
+ /* Primary */
+ .btn-primary-custom {
+   background: #8b4dff;
+   border: 1px solid #8b4dff;
+   color: #ffffff;
+ }
+
+ .btn-primary-custom:hover {
+   background: #7539e8;
+   border-color: #7539e8;
+   color: #ffffff;
+ }
+
+ /* Purple */
+ .btn-purple-custom {
+   background: rgba(139, 77, 255, 0.12);
+   border: 1px solid rgba(139, 77, 255, 0.35);
+   color: #b485ff;
+ }
+
+ .btn-purple-custom:hover {
+   background: rgba(139, 77, 255, 0.22);
+   border-color: #8b4dff;
+   color: #c59cff;
+ }
+
+ /* Secondary */
+ .btn-secondary-custom {
+   background: #161e2b;
+   border: 1px solid #293448;
+   color: #c5ccda;
+ }
+
+ .btn-secondary-custom:hover {
+   background: #1d2737;
+   border-color: #59647a;
+   color: #ffffff;
+ }
+
+ /* Danger */
+ .btn-danger-custom {
+   background: #c93c52;
+   border: 1px solid #c93c52;
+   color: #ffffff;
+ }
+
+ .btn-danger-custom:hover {
+   background: #a92e42;
+   border-color: #a92e42;
+ }
+
+ /* Danger Outline */
+ .btn-danger-outline {
+   background: transparent;
+   border: 1px solid rgba(201, 60, 82, 0.45);
+   color: #e36b7d;
+ }
+
+ .btn-danger-outline:hover {
+   background: rgba(201, 60, 82, 0.10);
+   border-color: #c93c52;
+   color: #f07888;
+ }
+
+ /* ========================================= RESPONSIVE ========================================= */
+ @media (max-width: 768px) {
+   .flexora-member-show {
+     padding: 20px 15px 40px;
+   }
+
+   .flexora-member-show .flexora-page-header {
+     align-items: flex-start;
+   }
+
+   .flexora-member-show .flexora-page-header h1 {
+     font-size: 25px;
+   }
+
+   .member-profile-header {
+     padding: 22px;
+   }
+
+   .member-section,
+   .member-actions {
+     padding: 22px;
+   }
+
+   .member-info-grid {
+     grid-template-columns: 1fr;
+   }
+
+   .member-header-icon {
+     width: 45px;
+     height: 45px;
+   }
+ }
+
+ @media (max-width: 500px) {
+   .member-profile-header {
+     align-items: flex-start;
+   }
+
+   .member-avatar {
+     width: 55px;
+     height: 55px;
+     font-size: 22px;
+   }
+
+   .member-profile-header h2 {
+     font-size: 20px;
+   }
+
+   .action-buttons {
+     flex-direction: column;
+     align-items: stretch;
+   }
+
+   .flexora-btn {
+     width: 100%;
+   }
+ }

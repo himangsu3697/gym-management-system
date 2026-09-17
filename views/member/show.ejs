@@ -1,34 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <p>mname : <%=member.mname%></p>
-        <p>email : <%=member.email%></p>
-        <p>age : <%=member.age%></p>
-        <p>workout plan : <%=member.workoutPlan%></p>
-        <p>trainer : <%=member.trainer%></p>
-        <p>membership : <%=member.membership%></p>
-        <p>start date : <%=member.membershipStartDate%></p>
-        <p>end date : <%=member.membershipEndDate%></p>
-        <button><a href="/flexora/member/<%=member._id%>/edit">Edit</a></button>
-        <form action="/flexora/member/<%=member._id%>?_method=DELETE" method="post">
-            <button>Delete</button>
-        </form>
-        <button><a href="/flexora/member/<%=member._id%>/membership">Add membership</a></button> <br>
-        <button><a href="/flexora/member/<%=member._id%>/membership/change">change membership</a></button> <br>
-        <form action="/flexora/member/<%=member._id%>/membership?_method=DELETE" method="post">
-            <button>Delete membership</button>
-        </form>
-        <button><a href="/flexora/member/<%=member._id%>/trainer">Add trainer</a></button> <br>
-        <button><a href="/flexora/member/<%=member._id%>/trainer/change">change trainer</a></button>
-        <form action="/flexora/member/<%=member._id%>/trainer?_method=DELETE" method="post">
-            <button>Delete trainer</button>
-        </form>
+<% layout("./layouts/boilerplate.ejs") %>
+    <div class="flexora-member-show offset-lg-1"> <!-- Page Header -->
+        <div class="flexora-page-header">
+            <div>
+                <div class="page-breadcrumb"> <span>Home</span> <i class="fa-solid fa-chevron-right"></i>
+                    <span>Members</span> <i class="fa-solid fa-chevron-right"></i> <span>Member Details</span>
+                </div>
+                <h1>Member Details</h1>
+                <p>View and manage member information</p>
+            </div>
+            <a href="/flexora/member" class="flexora-back-btn">
+                <i class="bi bi-arrow-left"></i>
+                Back to Members
+            </a>
+        </div> <!-- Member Profile Card -->
+        <div class="member-profile-card">
+            <div class="member-profile-header">
+                <div class="member-avatar"> <i class="fa-solid fa-user"></i> </div>
+                <div>
+                    <h2>
+                        <%= member.mname %>
+                    </h2>
+                    <p> <i class="fa-solid fa-envelope"></i>
+                        <%= member.email %>
+                    </p>
+                </div>
+            </div> <!-- Member Information -->
+            <div class="member-section">
+                <div class="section-title"> <i class="fa-solid fa-id-card"></i>
+                    <h3>Personal Information</h3>
+                </div>
+                <div class="member-info-grid">
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-user"></i> </div>
+                        <div> <span>Name</span> <strong>
+                                <%= member.mname %>
+                            </strong> </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-envelope"></i> </div>
+                        <div> <span>Email</span> <strong>
+                                <%= member.email %>
+                            </strong> </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-cake-candles"></i> </div>
+                        <div> <span>Age</span> <strong>
+                                <%= member.age %> years
+                            </strong> </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-dumbbell"></i> </div>
+                        <div> <span>Workout Plan</span> <strong>
+                                <%= member.workoutPlan || "Not assigned" %>
+                            </strong> </div>
+                    </div>
+                </div>
+            </div> <!-- Membership & Trainer -->
+            <div class="member-section">
+                <div class="section-title"> <i class="fa-solid fa-clipboard-check"></i>
+                    <h3>Membership & Trainer</h3>
+                </div>
+                <div class="member-info-grid">
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-id-badge"></i> </div>
+                        <div> <span>Membership</span> <strong>
+                                <%= member.membership || "Not assigned" %>
+                            </strong> </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-user-tie"></i> </div>
+                        <div> <span>Trainer</span> <strong>
+                                <%= member.trainer || "Not assigned" %>
+                            </strong> </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-calendar-plus"></i> </div>
+                        <div> <span>Start Date</span> <strong>
+                                <%= member.membershipStartDate || "Not available" %>
+                            </strong> </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"> <i class="fa-solid fa-calendar-xmark"></i> </div>
+                        <div> <span>End Date</span> <strong>
+                                <%= member.membershipEndDate || "Not available" %>
+                            </strong> </div>
+                    </div>
+                </div>
+            </div> <!-- Member Actions -->
+            <div class="member-actions">
+                <div class="action-group">
+                    <h4> <i class="fa-solid fa-user-gear"></i> Member </h4>
+                    <div class="action-buttons"> <a href="/flexora/member/<%= member._id %>/edit"
+                            class="flexora-btn btn-primary-custom"> <i class="fa-solid fa-pen"></i> Edit Member </a>
+                        <form action="/flexora/member/<%= member._id %>?_method=DELETE" method="post"> <button
+                                type="submit" class="flexora-btn btn-danger-custom"> <i class="fa-solid fa-trash"></i>
+                                Delete Member </button> </form>
+                    </div>
+                </div>
+                <div class="action-group">
+                    <h4> <i class="fa-solid fa-id-card"></i> Membership </h4>
+                    <div class="action-buttons"> <a href="/flexora/member/<%= member._id %>/membership"
+                            class="flexora-btn btn-purple-custom"> <i class="fa-solid fa-plus"></i> Add Membership </a>
+                        <a href="/flexora/member/<%= member._id %>/membership/change"
+                            class="flexora-btn btn-secondary-custom"> <i class="fa-solid fa-arrows-rotate"></i> Change
+                            Membership </a>
+                        <form action="/flexora/member/<%= member._id %>/membership?_method=DELETE" method="post">
+                            <button type="submit" class="flexora-btn btn-danger-outline"> <i
+                                    class="fa-solid fa-trash-can"></i> Delete Membership </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="action-group">
+                    <h4> <i class="fa-solid fa-user-tie"></i> Trainer </h4>
+                    <div class="action-buttons"> <a href="/flexora/member/<%= member._id %>/trainer"
+                            class="flexora-btn btn-purple-custom"> <i class="fa-solid fa-user-plus"></i> Add Trainer
+                        </a> <a href="/flexora/member/<%= member._id %>/trainer/change"
+                            class="flexora-btn btn-secondary-custom"> <i class="fa-solid fa-arrows-rotate"></i> Change
+                            Trainer </a>
+                        <form action="/flexora/member/<%= member._id %>/trainer?_method=DELETE" method="post"> <button
+                                type="submit" class="flexora-btn btn-danger-outline"> <i
+                                    class="fa-solid fa-user-minus"></i> Delete Trainer </button> </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>

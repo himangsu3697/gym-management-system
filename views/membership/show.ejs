@@ -1,22 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <p>plan name : <%= membership.planName %></p>
-        <p>duration in Months : <%= membership.durationInMonths %></p>
-        <p>price : <%= membership.price %></p>
-        <p>facilities : <%= membership.facilities %></p>
-        <p>description : <%= membership.description %></p>
-        <p>status : <%= membership.status %></p>
-        <button><a href="/flexora/membership/<%=membership._id%>/edit">edit</a></button>
-        <form action="/flexora/membership/<%=membership._id%>?_method=DELETE" method="post">
-           <button>Delete</button>
-        </form>
-    </div>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <section class="flexora-membership-show">
+
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div class="flexora-breadcrumb">
+                <a href="/flexora">Home</a>
+                <span>/</span>
+                <a href="/flexora/membership">Memberships</a>
+                <span>/</span>
+                <span>Plan Details</span>
+            </div>
+
+
+            <!-- Main Membership Card -->
+            <div class="flexora-plan-details-card">
+
+                <!-- Header -->
+                <div class="flexora-plan-details-header">
+
+                    <div class="flexora-plan-title">
+
+                        <div class="flexora-membership-icon">
+
+                            <% if(membership.planName==="Basic" ) { %>
+                                <i class="bi bi-lightning-charge-fill"></i>
+
+                                <% } else if(membership.planName==="Premium" ) { %>
+                                    <i class="bi bi-fire"></i>
+
+                                    <% } else { %>
+                                        <i class="bi bi-gem"></i>
+                                        <% } %>
+
+                        </div>
+
+                        <div>
+                            <span class="flexora-small-label">MEMBERSHIP PLAN</span>
+
+                            <h1>
+                                <%= membership.planName %>
+                            </h1>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Status -->
+                    <span class="flexora-status
+                    <%= membership.status === 'active'
+                        ? 'status-active'
+                        : 'status-inactive' %>">
+
+                        <i class="bi bi-circle-fill"></i>
+                        <%= membership.status %>
+
+                    </span>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="flexora-plan-description-box">
+
+                    <span class="flexora-small-label">ABOUT THIS PLAN</span>
+
+                    <p>
+                        <%= membership.description %>
+                    </p>
+
+                </div>
+
+
+                <!-- Plan Information -->
+                <div class="flexora-plan-info-grid">
+
+                    <div class="flexora-plan-info-item">
+
+                        <div class="flexora-info-icon">
+                            <i class="bi bi-calendar3"></i>
+                        </div>
+
+                        <div>
+                            <span>Duration</span>
+
+                            <strong>
+                                <%= membership.durationInMonths %>
+                                    <%= membership.durationInMonths===1 ? "Month" : "Months" %>
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flexora-plan-info-item">
+
+                        <div class="flexora-info-icon">
+                            <i class="bi bi-currency-rupee"></i>
+                        </div>
+
+                        <div>
+                            <span>Price</span>
+
+                            <strong>
+                                ₹<%= membership.price.toLocaleString("en-IN") %>
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flexora-plan-info-item">
+
+                        <div class="flexora-info-icon">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+
+                        <div>
+                            <span>Status</span>
+
+                            <strong>
+                                <%= membership.status %>
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Facilities -->
+                <div class="flexora-plan-facilities">
+
+                    <div class="flexora-section-title">
+
+                        <div>
+                            <span class="flexora-small-label">
+                                WHAT'S INCLUDED
+                            </span>
+
+                            <h2>Plan Facilities</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flexora-facility-grid">
+
+                        <% membership.facilities.forEach(function(facility) { %>
+
+                            <div class="flexora-facility-item">
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                <span>
+                                    <%= facility %>
+                                </span>
+
+                            </div>
+
+                            <% }) %>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+                <div class="flexora-plan-actions">
+
+                    <a href="/flexora/membership/<%= membership._id %>/edit" class="flexora-edit-btn">
+                        <i class="bi bi-pencil-square"></i>
+                        Edit Plan
+                    </a>
+
+
+                    <form action="/flexora/membership/<%= membership._id %>?_method=DELETE" method="post">
+
+                        <button type="submit" class="flexora-delete-btn">
+                            <i class="bi bi-trash3"></i>
+                            Delete Plan
+                        </button>
+
+                    </form>
+
+
+                    <a href="/flexora/membership" class="flexora-back-btn">
+                        <i class="bi bi-arrow-left"></i>
+                        Back to Memberships
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>

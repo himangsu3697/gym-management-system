@@ -1,22 +1,236 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <h1>All memberships</h1>
-        <% for(let membership of memberships) { %>
-           <div>
-               <p> plan name : <%= membership.planName %></p>
-               <p>plan duration : <%= membership.durationInMonths %></p>
-               <p>plan price : <%= membership.price %></p>
-               <button><a href="/flexora/membership/<%=membership._id%>">see full plan</a></button>
-           </div>
-        <% } %>
-        <button><a href="/flexora/membership/new">Add Membership</a></button>
-    </div>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <!-- ================= MEMBERSHIPS PAGE ================= -->
+    <section class="flexora-memberships-page">
+
+        <div class="container-fluid px-3 px-lg-5">
+
+            <!-- Page Header -->
+            <div class="flexora-page-header">
+
+                <div>
+                    <div class="flexora-breadcrumb">
+                        <a href="/flexora">Home</a>
+                        <span>/</span>
+                        <span>Memberships</span>
+                    </div>
+
+                    <h1>Membership Plans</h1>
+
+                    <p>
+                        Choose the membership plan that fits your fitness goals.
+                    </p>
+                </div>
+
+                <a href="/flexora/membership/new" class="flexora-add-btn">
+                    <i class="bi bi-plus-lg"></i>
+                    Add Membership
+                </a>
+
+            </div>
+
+
+            <!-- Membership Cards -->
+            <div class="row g-4">
+
+                <% for(let membership of memberships) { %>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+
+                        <div class="flexora-membership-card
+                        <%= membership.planName === 'Elite' ? 'elite-card' : '' %>">
+
+                            <!-- Card Top -->
+                            <div class="flexora-membership-top">
+
+                                <div class="flexora-membership-icon">
+
+                                    <% if(membership.planName==="Basic" ) { %>
+                                        <i class="bi bi-lightning-charge-fill"></i>
+
+                                        <% } else if(membership.planName==="Premium" ) { %>
+                                            <i class="bi bi-fire"></i>
+
+                                            <% } else { %>
+                                                <i class="bi bi-gem"></i>
+                                                <% } %>
+
+                                </div>
+
+                                <span class="flexora-status">
+                                    Active
+                                </span>
+
+                            </div>
+
+
+                            <!-- Plan Name -->
+                            <h2>
+                                <%= membership.planName %>
+                            </h2>
+
+                            <p class="flexora-plan-description">
+
+                                <% if(membership.planName==="Basic" ) { %>
+
+                                    Essential gym access for your everyday workouts.
+
+                                    <% } else if(membership.planName==="Premium" ) { %>
+
+                                        More facilities and flexibility for your fitness journey.
+
+                                        <% } else { %>
+
+                                            Complete fitness experience with optional personal training.
+
+                                            <% } %>
+
+                            </p>
+
+
+                            <!-- Price -->
+                            <div class="flexora-price">
+
+                                <span class="currency">₹</span>
+
+                                <span class="amount">
+                                    <%= membership.price.toLocaleString("en-IN") %>
+                                </span>
+
+                                <span class="duration">
+                                    / <%= membership.durationInMonths %>
+                                        <%= membership.durationInMonths===1 ? "Month" : "Months" %>
+                                </span>
+
+                            </div>
+
+
+                            <!-- Duration -->
+                            <div class="flexora-duration">
+
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Membership Duration
+                                </span>
+
+                                <strong>
+                                    <%= membership.durationInMonths %>
+                                        <%= membership.durationInMonths===1 ? "Month" : "Months" %>
+                                </strong>
+
+                            </div>
+
+
+                            <!-- Facilities -->
+                            <div class="flexora-facilities">
+
+                                <h4>Plan Includes</h4>
+
+                                <% if(membership.planName==="Basic" ) { %>
+
+                                    <div>
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        Gym Access
+                                    </div>
+
+                                    <div>
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        Locker
+                                    </div>
+
+                                    <% } else if(membership.planName==="Premium" ) { %>
+
+                                        <div>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            Gym Access
+                                        </div>
+
+                                        <div>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            Locker
+                                        </div>
+
+                                        <div>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            Cardio Area
+                                        </div>
+
+                                        <div>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            Group Classes
+                                        </div>
+
+                                        <% } else { %>
+
+                                            <div>
+                                                <i class="bi bi-check-circle-fill"></i>
+                                                Gym Access
+                                            </div>
+
+                                            <div>
+                                                <i class="bi bi-check-circle-fill"></i>
+                                                Locker
+                                            </div>
+
+                                            <div>
+                                                <i class="bi bi-check-circle-fill"></i>
+                                                Cardio Area
+                                            </div>
+
+                                            <div>
+                                                <i class="bi bi-check-circle-fill"></i>
+                                                Group Classes
+                                            </div>
+
+                                            <div>
+                                                <i class="bi bi-check-circle-fill"></i>
+                                                Personal Trainer
+                                            </div>
+
+                                            <div>
+                                                <i class="bi bi-check-circle-fill"></i>
+                                                Diet Consultation
+                                            </div>
+
+                                            <% } %>
+
+                            </div>
+
+
+                            <!-- Button -->
+                            <a href="/flexora/membership/<%= membership._id %>" class="flexora-plan-btn">
+                                View Full Plan
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <% } %>
+
+            </div>
+
+
+            <!-- Bottom Information -->
+            <div class="flexora-membership-info">
+
+                <div class="flexora-info-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <div>
+                    <h3>Flexible Membership Options</h3>
+
+                    <p>
+                        Choose from 1, 3, 6 or 12 month membership durations.
+                        All plans provide access to Flexora's fitness facilities
+                        according to their included features.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
