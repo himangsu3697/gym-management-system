@@ -13,6 +13,13 @@ Router.get("/new", (req, res) => {
   res.render("./membership/new.ejs");
 });
 
+//filter plans
+Router.get("/filter", async(req, res) => {
+  const {plan} = req.query;
+  const memberships = await Membership.find({planName : plan});
+  res.render("./membership/index.ejs", {memberships});
+});
+
 //get a specific membership
 Router.get("/:id", async(req, res) => {
   const {id} = req.params;

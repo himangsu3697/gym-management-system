@@ -1,0 +1,207 @@
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="flexora-contact-page">
+
+        <!-- Hero / Page Header -->
+        <section class="flexora-contact-hero">
+
+            <div class="flexora-contact-hero-content">
+
+                <div class="flexora-contact-badge">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>We're Here to Help</span>
+                </div>
+
+                <h1>
+                    Get in <span>Touch</span>
+                </h1>
+
+                <p>
+                    Have a question about memberships, trainers, or your fitness journey?
+                    Our team is ready to help you.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Content -->
+        <section class="flexora-contact-content">
+
+            <!-- Contact Information -->
+            <div class="flexora-contact-info">
+
+                <div class="flexora-section-heading">
+                    <span>CONTACT US</span>
+                    <h2>Let's Talk About Your Fitness Goals</h2>
+                    <p>
+                        Reach out to us and we'll get back to you as soon as possible.
+                    </p>
+                </div>
+
+
+                <div class="flexora-contact-info-list">
+
+                    <!-- Email -->
+                    <div class="flexora-contact-info-card">
+
+                        <div class="flexora-contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>support@flexora.com</p>
+                            <span>We'll respond within 24 hours.</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="flexora-contact-info-card">
+
+                        <div class="flexora-contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+91 98765 43210</p>
+                            <span>Mon - Sat, 8:00 AM - 8:00 PM</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Location -->
+                    <div class="flexora-contact-info-card">
+
+                        <div class="flexora-contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h3>Visit Us</h3>
+                            <p>Flexora Fitness Center</p>
+                            <span>Your fitness journey starts here.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <div class="flexora-contact-form-card">
+
+                <div class="flexora-contact-form-header">
+
+                    <div class="flexora-contact-form-icon">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+
+                    <div>
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form and we'll get back to you.</p>
+                    </div>
+
+                </div>
+
+
+                <form action="/flexora/contact" method="post">
+
+                    <!-- Name -->
+                    <div class="flexora-contact-form-group">
+
+                        <label for="name">
+                            <i class="fa-solid fa-user"></i>
+                            Full Name
+                        </label>
+
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="flexora-contact-form-group">
+
+                        <label for="email">
+                            <i class="fa-solid fa-envelope"></i>
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    </div>
+
+
+                    <!-- Subject -->
+                    <div class="flexora-contact-form-group">
+
+                        <label for="subject">
+                            <i class="fa-solid fa-tag"></i>
+                            Subject
+                        </label>
+
+                        <input type="text" id="subject" name="subject" placeholder="What is your message about?"
+                            required>
+
+                    </div>
+
+
+                    <!-- Message -->
+                    <div class="flexora-contact-form-group">
+
+                        <label for="message">
+                            <i class="fa-solid fa-message"></i>
+                            Message
+                        </label>
+
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button type="submit" class="flexora-contact-submit-btn">
+
+                        <span>Send Message</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom CTA -->
+        <section class="flexora-contact-cta">
+
+            <div>
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h2>Ready to Start Your Fitness Journey?</h2>
+
+                <p>
+                    Join Flexora and take the next step towards a stronger you.
+                </p>
+            </div>
+
+            <a href="/flexora/membership">
+                Explore Memberships
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </div>

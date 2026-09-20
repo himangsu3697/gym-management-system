@@ -1,18 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Add new Member</h1>
-    <form action="/flexora/member" method="post">
-        <input type="text" name="mname"> Name <br>
-        <input type="email" name="email"> Email <br>
-        <input type="number" name="age"> Age <br>
-        <input type="text" name="workoutPlan"> Workout Plan <br>
-        <button>Submit</button>
-    </form>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="flexora-member-new-page">
+
+        <!-- Page Header -->
+        <div class="flexora-page-header">
+
+            <div>
+                <div class="page-breadcrumb">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Members</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Add Member</span>
+                </div>
+
+                <h1>Add New Member</h1>
+
+                <p>
+                    Create a new member profile and add their basic information.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Form Section -->
+        <div class="flexora-member-form-wrapper">
+
+            <div class="flexora-member-form-card">
+
+                <!-- Card Header -->
+                <div class="member-form-card-header">
+
+                    <div class="member-form-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div>
+                        <h2>Member Information</h2>
+
+                        <p>
+                            Enter the member's basic details below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Form -->
+                <form action="/flexora/member" method="post">
+
+                    <div class="member-form-grid">
+
+                        <!-- Name -->
+                        <div class="member-form-group">
+
+                            <label for="mname">
+                                <i class="fa-solid fa-user"></i>
+                                Name
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input type="text" id="mname" name="mname" placeholder="Enter member name" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="member-form-group">
+
+                            <label for="email">
+                                <i class="fa-solid fa-envelope"></i>
+                                Email
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Age -->
+                        <div class="member-form-group">
+
+                            <label for="age">
+                                <i class="fa-solid fa-calendar"></i>
+                                Age
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-solid fa-hashtag"></i>
+
+                                <input type="number" id="age" name="age" min="16" placeholder="Enter age" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Workout Plan -->
+                        <div class="member-form-group">
+
+                            <label for="workoutPlan">
+                                <i class="fa-solid fa-dumbbell"></i>
+                                Workout Plan
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-solid fa-list-check"></i>
+
+                                <input type="text" id="workoutPlan" name="workoutPlan" placeholder="Enter workout plan">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form Footer -->
+                    <div class="member-form-footer">
+
+                        <span class="member-form-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            You can assign membership and trainer details later.
+                        </span>
+
+                        <button type="submit" class="member-submit-btn">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Add Member
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>

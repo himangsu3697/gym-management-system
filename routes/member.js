@@ -18,7 +18,7 @@ Router.get("/new", (req, res) => {
 //view a specific member
 Router.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const member = await Member.findById(id);
+  const member = await Member.findById(id).populate("membership").populate("trainer");
   res.render("./member/show.ejs", { member });
 });
 
@@ -210,7 +210,7 @@ Router.get("/:id/trainer/change", async (req, res) => {
   }
 
   const trainers = await Trainer.find();
-  res.render("./member/changeTrainer.ejs", { trainers, member });
+  res.render("./member/changeTrainer.ejs", { trainers, id });
 });
 
 //change trainer

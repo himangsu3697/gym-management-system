@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const Membership = require("../models/membership.js");
+const Trainer = require("../models/trainer.js");
 const memberSchema = new mongoose.Schema({
     mname: {
         type: String,

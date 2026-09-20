@@ -27,7 +27,7 @@ const trannerSchema = new mongoose.Schema({
     }
 });
 
-const Tranner = mongoose.model("Tranner", trannerSchema);
+const Trainer = mongoose.model("Trainer", trannerSchema);
 
-module.exports = Tranner;
+module.exports = Trainer;
 

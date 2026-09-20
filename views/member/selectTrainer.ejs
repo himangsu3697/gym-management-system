@@ -1,21 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/flexora/member/<%=id%>/trainer" method="post">
-        <select name="trainerId">
-            <%for(let trainer of trainers) { %>
-                <option value="<%=trainer._id%>">
-                    <div>name : <%=trainer.tname%></div>
-                    <div>experience : <%=trainer.experience%></div>
-                </option>
-            <%}%>
-        </select>
-        <button>submit</button>
-    </form>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="flexora-trainer-select-page">
+
+        <!-- Page Header -->
+        <div class="flexora-page-header">
+            <div>
+                <div class="flexora-breadcrumb">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Members</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Select Trainer</span>
+                </div>
+
+                <h1>Select Trainer</h1>
+
+                <p>
+                    Choose a personal trainer for this member.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Trainer Selection Card -->
+        <div class="flexora-trainer-select-card">
+
+            <div class="flexora-form-header">
+                <div class="flexora-form-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <div>
+                    <h2>Assign Personal Trainer</h2>
+                    <p>Select a trainer from the available trainers.</p>
+                </div>
+            </div>
+
+
+            <form action="/flexora/member/<%=id%>/trainer" method="post">
+
+                <div class="flexora-form-group">
+
+                    <label for="trainerId">
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Trainer
+                    </label>
+
+                    <select name="trainerId" id="trainerId" required>
+
+                        <option value="" disabled selected>
+                            Select a trainer
+                        </option>
+
+                        <% for(let trainer of trainers) { %>
+
+                            <option value="<%=trainer._id%>">
+                                <%=trainer.tname%> — <%=trainer.experience%> years experience
+                            </option>
+
+                            <% } %>
+
+                    </select>
+
+                </div>
+
+
+                <div class="flexora-form-actions">
+
+                    <a href="/flexora/member/<%=id%>" class="flexora-cancel-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back
+                    </a>
+
+                    <button type="submit" class="flexora-submit-btn">
+                        <i class="fa-solid fa-user-check"></i>
+                        Assign Trainer
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>

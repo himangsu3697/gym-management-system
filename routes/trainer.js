@@ -1,6 +1,8 @@
 const express = require("express");
 const Router = express.Router();
 const Trainer = require("../models/trainer.js");
+const Member = require("../models/member.js");
+const Membership = require("../models/membership.js");
 
 //get all trainers
 Router.get("/", async(req, res) => {
@@ -17,7 +19,8 @@ Router.get("/new", (req, res) => {
 Router.get("/:id", async(req, res) => {
   const {id} = req.params;
   const trainer = await Trainer.findById(id);
-  res.render("./trainer/show.ejs", {trainer});
+  const members = await Member.find({trainer : id});
+  res.render("./trainer/show.ejs", {trainer, members});
 });
 
 //create new Trainer

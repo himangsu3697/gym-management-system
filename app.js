@@ -9,11 +9,12 @@ const methodOverride = require("method-override");
 const membershipRoutes = require("./routes/membership.js");
 const trainerRoutes = require("./routes/trainer.js");
 const memberRoutes = require("./routes/member.js");
+const handleExpiredMembership = require("./util/removeExpiredMembership.js");
 const App = express();
 const port = 8080;
 
 //body parser
-App.use(express.urlencoded({ extended: true}));
+App.use(express.urlencoded({ extended: true }));
 App.use(express.json());
 
 //view engine setup
@@ -33,12 +34,29 @@ async function main() {
 }
 main().then((res) => {
   console.log("connection successfull");
+
+  //handle expiry membership
+  handleExpiredMembership();
+
+  setInterval(() => {
+    handleExpiredMembership();
+  }, 60 * 60 * 1000);
 });
 
 //home route
-App.get("/flexora", async (req, res) => {
+App.get("/flexora", (req, res) => {
   res.render("./home.ejs");
 });
+
+//about route
+App.get("/flexora/about", (req, res) => {
+  res.render("./about.ejs");
+});
+
+//contact route
+App.get("/flexora/contact", (req, res) => {
+  res.render("./contact.ejs");
+}); 
 
 //membership routes
 App.use("/flexora/membership", membershipRoutes);
@@ -52,6 +70,7 @@ App.use("/flexora/member", memberRoutes);
 App.listen(port, () => {
   console.log("App is listning at the port : ", port);
 });
+
 
 
 

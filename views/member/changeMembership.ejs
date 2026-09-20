@@ -1,21 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-     <form action="/flexora/member/<%=id%>/membership?_method=PUT" method="post">
-        <select name="membershipId">
-            <%for(let membership of memberships) { %>
-                <option value="<%=membership._id%>">
-                    <div>plan name : <%=membership.planName%></div>
-                    <div>duration : <%=membership.durationInMonths%></div>
-                </option>
-            <%}%>
-        </select>
-        <button>submit</button>
-    </form>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="flexora-member-new-page">
+
+        <!-- Page Header -->
+        <div class="flexora-page-header">
+
+            <div>
+                <div class="page-breadcrumb">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Members</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Membership</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Change Membership</span>
+                </div>
+
+                <h1>Change Membership</h1>
+
+                <p>Select a new membership plan for this member.</p>
+            </div>
+
+            <a href="/flexora/member/<%= id %>" class="flexora-add-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Member
+            </a>
+
+        </div>
+
+
+        <!-- Membership Form -->
+        <div class="flexora-member-form-wrapper">
+
+            <div class="flexora-member-form-card">
+
+                <!-- Card Header -->
+                <div class="member-form-card-header">
+
+                    <div class="member-form-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div>
+                        <h2>Change Membership</h2>
+
+                        <p>
+                            Choose the membership plan you want to assign.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Form -->
+                <form action="/flexora/member/<%= id %>/membership?_method=PUT" method="post">
+
+                    <div class="flexora-member-form-wrapper">
+
+                        <!-- Membership -->
+                        <div class="member-form-group">
+
+                            <label for="membershipId">
+                                <i class="fa-solid fa-crown"></i>
+                                Membership Plan
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-solid fa-id-card"></i>
+
+                                <select name="membershipId" id="membershipId" required>
+
+                                    <option value="" disabled selected>
+                                        Select a membership
+                                    </option>
+
+                                    <% for(let membership of memberships) { %>
+
+                                        <option value="<%= membership._id %>">
+                                            <%= membership.planName %>
+                                                -
+                                                <%= membership.durationInMonths %>
+                                                    Month(s)
+                                                    -
+                                                    ₹<%= membership.price %>
+                                        </option>
+
+                                        <% } %>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form Footer -->
+                    <div class="member-form-footer">
+
+                        <p class="member-form-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Changing the membership will assign the selected
+                            plan to this member.
+                        </p>
+
+                        <button type="submit" class="member-submit-btn">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            Change Membership
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>

@@ -1,21 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/flexora/member/<%=id%>/membership" method="post">
-        <select name="membershipId">
-            <%for(let membership of memberships) { %>
-                <option value="<%=membership._id%>">
-                    <div>plan name : <%=membership.planName%></div>
-                    <div>duration : <%=membership.durationInMonths%></div>
-                </option>
-            <%}%>
-        </select>
-        <button>submit</button>
-    </form>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="flexora-member-new-page">
+
+        <!-- Page Header -->
+        <div class="flexora-page-header">
+
+            <div>
+
+                <div class="page-breadcrumb">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Members</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Membership</span>
+                </div>
+
+                <h1>Select Membership</h1>
+
+                <p>
+                    Choose a membership plan for this member.
+                </p>
+
+            </div>
+            <a href="/flexora/member/<%= id %>" class="flexora-add-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Member
+            </a>
+
+        </div>
+
+
+        <!-- Membership Form -->
+        <div class="flexora-member-form-wrapper">
+
+            <div class="flexora-member-form-card">
+
+                <!-- Card Header -->
+                <div class="member-form-card-header">
+
+                    <div class="member-form-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div>
+                        <h2>Membership Details</h2>
+
+                        <p>
+                            Select a membership plan to assign to this member.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Form -->
+                <form action="/flexora/member/<%= id %>/membership" method="post">
+
+                    <div class="member-form-group">
+
+                        <label for="membershipId">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            Membership Plan
+                        </label>
+
+                        <div class="member-input-wrapper">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <select id="membershipId" name="membershipId" required>
+
+                                <option value="" disabled selected>
+                                    Select a membership plan
+                                </option>
+
+                                <% for(let membership of memberships) { %>
+
+                                    <option value="<%= membership._id %>">
+                                        <%= membership.planName %> -
+                                            <%= membership.durationInMonths %>
+                                                <%= membership.durationInMonths==1 ? "Month" : "Months" %>
+                                    </option>
+
+                                    <% } %>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form Footer -->
+                    <div class="member-form-footer">
+
+                        <span class="member-form-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            The membership duration will determine the expiry date.
+                        </span>
+
+                        <button type="submit" class="member-submit-btn">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Assign Membership
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>

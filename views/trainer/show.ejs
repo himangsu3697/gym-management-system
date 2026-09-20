@@ -129,6 +129,103 @@
 
                         </div>
 
+                        <!-- Assigned Members -->
+                        <div class="flexora-profile-section flexora-assigned-members-section">
+
+                            <div class="flexora-section-heading">
+                                <div>
+                                    <h3>
+                                        <i class="bi bi-people"></i>
+                                        Assigned Members
+                                    </h3>
+                                    <p>
+                                        Members currently assigned to this trainer.
+                                    </p>
+                                </div>
+
+                                <span class="flexora-member-count">
+                                    <i class="bi bi-people-fill"></i>
+                                    <%= members.length %> Members
+                                </span>
+                            </div>
+
+
+                            <% if (members.length===0) { %>
+
+                                <!-- No Members -->
+                                <div class="flexora-no-members">
+                                    <div class="flexora-no-members-icon">
+                                        <i class="bi bi-person-x"></i>
+                                    </div>
+
+                                    <h4>No Members Assigned</h4>
+
+                                    <p>
+                                        This trainer currently has no members assigned.
+                                    </p>
+                                </div>
+
+                                <% } else { %>
+
+                                    <!-- Members List -->
+                                    <div class="flexora-members-grid">
+
+                                        <% members.forEach(member=> { %>
+
+                                            <div class="flexora-assigned-member-card">
+
+                                                <!-- Member Icon -->
+                                                <div class="flexora-member-icon">
+                                                    <i class="bi bi-person"></i>
+                                                </div>
+
+
+                                                <!-- Member Info -->
+                                                <div class="flexora-assigned-member-info">
+
+                                                    <h4>
+                                                        <%= member.mname %>
+                                                    </h4>
+
+                                                    <p>
+                                                        <i class="bi bi-envelope"></i>
+                                                        <%= member.email %>
+                                                    </p>
+
+                                                    <div class="flexora-member-meta">
+
+                                                        <span>
+                                                            <i class="bi bi-person"></i>
+                                                            <%= member.age %> years
+                                                        </span>
+
+                                                        <span>
+                                                            <i class="bi bi-dumbbell"></i>
+                                                            <%= member.workoutPlan || "No plan" %>
+                                                        </span>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                                <!-- View Member -->
+                                                <a href="/flexora/member/<%= member._id %>"
+                                                    class="flexora-view-member-btn">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </a>
+
+                                            </div>
+
+                                            <% }) %>
+
+                                    </div>
+
+                                    <% } %>
+
+                        </div>
+
+
                     </div>
 
                 </div>

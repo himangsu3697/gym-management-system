@@ -1,18 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Edit member</h1>
-    <form action="/flexora/member/<%=member._id%>?_method=PUT" method="post">
-        <input type="text" name="mname" value="<%=member.mname%>"> Name <br>
-        <input type="email" name="email" value="<%=member.email%>"> Email <br>
-        <input type="number" name="age" value="<%=member.age%>"> Age <br>
-        <input type="text" name="workoutPlan" value="<%=member.workoutPlan%>"> Workout Plan <br>
-        <button>Submit</button>
-    </form>
-</body>
-</html>
+<% layout("./layouts/boilerplate.ejs") %>
+
+    <div class="flexora-member-new-page">
+
+        <!-- Page Header -->
+        <div class="flexora-page-header">
+
+            <div>
+                <div class="page-breadcrumb">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Members</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Edit Member</span>
+                </div>
+
+                <h1>Edit Member</h1>
+
+                <p>
+                    Update the member's basic information.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Form Section -->
+        <div class="flexora-member-form-wrapper">
+
+            <div class="flexora-member-form-card">
+
+                <!-- Card Header -->
+                <div class="member-form-card-header">
+
+                    <div class="member-form-icon">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </div>
+
+                    <div>
+                        <h2>Member Information</h2>
+
+                        <p>
+                            Update the member's details below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Form -->
+                <form action="/flexora/member/<%= member._id %>?_method=PUT" method="post">
+
+                    <div class="member-form-grid">
+
+                        <!-- Name -->
+                        <div class="member-form-group">
+
+                            <label for="mname">
+                                <i class="fa-solid fa-user"></i>
+                                Name
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input type="text" id="mname" name="mname" value="<%= member.mname %>"
+                                    placeholder="Enter member name" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="member-form-group">
+
+                            <label for="email">
+                                <i class="fa-solid fa-envelope"></i>
+                                Email
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input type="email" id="email" name="email" value="<%= member.email %>"
+                                    placeholder="Enter email address" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Age -->
+                        <div class="member-form-group">
+
+                            <label for="age">
+                                <i class="fa-solid fa-calendar"></i>
+                                Age
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-solid fa-hashtag"></i>
+
+                                <input type="number" id="age" name="age" value="<%= member.age %>" min="16"
+                                    placeholder="Enter age" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Workout Plan -->
+                        <div class="member-form-group">
+
+                            <label for="workoutPlan">
+                                <i class="fa-solid fa-dumbbell"></i>
+                                Workout Plan
+                            </label>
+
+                            <div class="member-input-wrapper">
+
+                                <i class="fa-solid fa-list-check"></i>
+
+                                <input type="text" id="workoutPlan" name="workoutPlan" value="<%= member.workoutPlan %>"
+                                    placeholder="Enter workout plan">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form Footer -->
+                    <div class="member-form-footer">
+
+                        <span class="member-form-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Update the required information and save your changes.
+                        </span>
+
+                        <button type="submit" class="member-submit-btn">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
