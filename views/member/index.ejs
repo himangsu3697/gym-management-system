@@ -1,84 +1,91 @@
 <% layout("./layouts/boilerplate.ejs") %>
 
-<section class="flexora-members-page">
+    <section class="flexora-members-page">
 
-    <div class="container-fluid px-3 px-lg-5">
+        <div class="container-fluid px-3 px-lg-5">
 
-        <!-- Page Header -->
-        <div class="flexora-page-header">
+            <!-- Page Header -->
+            <div class="flexora-page-header">
 
-            <div>
-                <div class="flexora-breadcrumb">
-                    <a href="/flexora">Home</a>
-                    <span>/</span>
-                    <span>Members</span>
+                <div>
+                    <div class="flexora-breadcrumb">
+                        <a href="/flexora">Home</a>
+                        <span>/</span>
+                        <span>Members</span>
+                    </div>
+
+                    <h1>All Members</h1>
+                    <p>Manage and view all members of your Flexora gym.</p>
                 </div>
 
-                <h1>All Members</h1>
-                <p>Manage and view all members of your Flexora gym.</p>
+                <a href="/flexora/member/new" class="flexora-add-btn">
+                    <i class="bi bi-person-plus-fill"></i>
+                    Add Member
+                </a>
+
             </div>
 
-            <a href="/flexora/member/new" class="flexora-add-btn">
-                <i class="bi bi-person-plus-fill"></i>
-                Add Member
-            </a>
 
-        </div>
+            <!-- Members Grid -->
+            <div class="flexora-members-grid">
 
+                <% for(let member of members) { %>
 
-        <!-- Members Grid -->
-        <div class="flexora-members-grid">
+                    <div class="flexora-member-card">
 
-            <% for(let member of members) { %>
+                        <!-- Card Top -->
+                        <div class="flexora-member-top">
 
-                <div class="flexora-member-card">
+                            <div class="flexora-member-icon">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
 
-                    <!-- Card Top -->
-                    <div class="flexora-member-top">
+                            <div class="flexora-status  <%= member.status === 'active'
+                        ? 'status-active'
+                        : 'status-inactive' %>">
+                                <i class="bi bi-circle-fill"></i>
+                                <%=member.status%>
+                            </div>
 
-                        <div class="flexora-member-icon">
-                            <i class="bi bi-person-fill"></i>
                         </div>
 
-                        <div class="flexora-member-status">
-                            <i class="bi bi-circle-fill"></i>
-                            Member
+
+                        <!-- Member Info -->
+                        <div class="flexora-member-info">
+
+                            <h2>
+                                <%= member.mname %>
+                            </h2>
+
+                            <div class="flexora-member-detail">
+                                <i class="bi bi-envelope"></i>
+                                <span>
+                                    <%= member.email %>
+                                </span>
+                            </div>
+
+                            <div class="flexora-member-detail">
+                                <i class="bi bi-calendar3"></i>
+                                <span>
+                                    <%= member.age %> years old
+                                </span>
+                            </div>
+
                         </div>
+
+
+                        <!-- View Button -->
+                        <a href="/flexora/member/<%= member._id %>" class="flexora-member-view-btn">
+                            View Member
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
 
                     </div>
 
+                    <% } %>
 
-                    <!-- Member Info -->
-                    <div class="flexora-member-info">
-
-                        <h2><%= member.mname %></h2>
-
-                        <div class="flexora-member-detail">
-                            <i class="bi bi-envelope"></i>
-                            <span><%= member.email %></span>
-                        </div>
-
-                        <div class="flexora-member-detail">
-                            <i class="bi bi-calendar3"></i>
-                            <span><%= member.age %> years old</span>
-                        </div>
-
-                    </div>
-
-
-                    <!-- View Button -->
-                    <a href="/flexora/member/<%= member._id %>"
-                       class="flexora-member-view-btn">
-                        View Member
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
-                </div>
-
-            <% } %>
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>

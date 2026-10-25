@@ -1,6 +1,8 @@
 <% layout("./layouts/boilerplate.ejs") %>
 
     <div class="membership-page offset-custom">
+
+        <!-- Page Header -->
         <div class="page-header">
             <div>
                 <h1>Edit Membership</h1>
@@ -8,90 +10,186 @@
             </div>
         </div>
 
+        <!-- Membership Card -->
         <div class="membership-card">
 
+            <!-- Card Header -->
             <div class="card-header">
+
                 <div class="card-icon">
-                    +
+                    <i class="bi bi-pencil"></i>
                 </div>
 
                 <div>
                     <h2>Membership Details</h2>
-                    <p>Update the membership plan details</p>
+                    <p>Update the details of this membership plan</p>
                 </div>
+
             </div>
 
-
+            <!-- Form -->
             <form action="/flexora/membership/<%= membership._id %>?_method=PUT" method="post">
 
                 <div class="membership-form-grid">
 
                     <!-- Plan Name -->
-                    <div class="form-field">
-                        <label for="planName">Plan Name</label>
+                    <div class="form-field plan-field">
 
-                        <input type="text" id="planName" name="planName" value="<%= membership.planName %>"
-                            placeholder="e.g. Premium" required>
+                        <label class="plan-section-label">
+                            Membership Plan
+                        </label>
+
+                        <div class="plan-options">
+
+                            <!-- Basic -->
+                            <div class="plan-option">
+
+                                <input type="radio" id="basic" name="planName" value="Basic"
+                                    <%=membership.planName==="Basic" ? "checked" : "" %>
+                                required>
+
+                                <label for="basic" class="plan-card">
+
+                                    <div class="plan-card-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+
+                                    <div class="plan-card-content">
+                                        <h3>Basic</h3>
+                                        <p>Essential gym access</p>
+                                    </div>
+
+                                    <div class="plan-check">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Premium -->
+                            <div class="plan-option">
+
+                                <input type="radio" id="premium" name="planName" value="Premium"
+                                    <%=membership.planName==="Premium" ? "checked" : "" %>>
+
+                                <label for="premium" class="plan-card">
+
+                                    <div class="plan-card-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+
+                                    <div class="plan-card-content">
+                                        <h3>Premium</h3>
+                                        <p>More features & benefits</p>
+                                    </div>
+
+                                    <div class="plan-check">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Elite -->
+                            <div class="plan-option">
+
+                                <input type="radio" id="elite" name="planName" value="Elite"
+                                    <%=membership.planName==="Elite" ? "checked" : "" %>>
+
+                                <label for="elite" class="plan-card">
+
+                                    <div class="plan-card-icon">
+                                        <i class="bi bi-gem"></i>
+                                    </div>
+
+                                    <div class="plan-card-content">
+                                        <h3>Elite</h3>
+                                        <p>Premium fitness experience</p>
+                                    </div>
+
+                                    <div class="plan-check">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
 
                     <!-- Duration -->
                     <div class="form-field">
-                        <label for="duration">Duration</label>
+
+                        <label for="duration">
+                            Duration
+                        </label>
 
                         <select id="duration" name="durationInMonths" required>
-                            <option value="">Select duration</option>
 
-                            <option value="1" <%=membership.durationInMonths==1 ? "selected" : "" %>
-                                >
+                            <option value="" disabled>
+                                Select duration
+                            </option>
+
+                            <option value="1" <%=membership.durationInMonths==1 ? "selected" : "" %>>
                                 1 Month
                             </option>
 
-                            <option value="3" <%=membership.durationInMonths==3 ? "selected" : "" %>
-                                >
+                            <option value="3" <%=membership.durationInMonths==3 ? "selected" : "" %>>
                                 3 Months
                             </option>
 
-                            <option value="6" <%=membership.durationInMonths==6 ? "selected" : "" %>
-                                >
+                            <option value="6" <%=membership.durationInMonths==6 ? "selected" : "" %>>
                                 6 Months
                             </option>
 
-                            <option value="12" <%=membership.durationInMonths==12 ? "selected" : "" %>
-                                >
+                            <option value="12" <%=membership.durationInMonths==12 ? "selected" : "" %>>
                                 12 Months
                             </option>
 
                         </select>
+
                     </div>
 
 
                     <!-- Price -->
                     <div class="form-field">
-                        <label for="price">Price (₹)</label>
+
+                        <label for="price">
+                            Price (₹)
+                        </label>
 
                         <input type="number" id="price" name="price" value="<%= membership.price %>"
-                            placeholder="e.g. 4000" min="0" required>
+                            placeholder="e.g. 4000" min="1" step="1" required>
+
                     </div>
 
 
                     <!-- Status -->
                     <div class="form-field">
-                        <label for="status">Status</label>
 
-                        <select id="status" name="status">
+                        <label for="status">
+                            Status
+                        </label>
 
-                            <option value="active" <%=membership.status==="active" ? "selected" : "" %>
-                                >
+                        <select id="status" name="status" required>
+
+                            <option value="active" <%=membership.status==="active" ? "selected" : "" %>>
                                 Active
                             </option>
 
-                            <option value="inactive" <%=membership.status==="inactive" ? "selected" : "" %>
-                                >
+                            <option value="inactive" <%=membership.status==="inactive" ? "selected" : "" %>>
                                 Inactive
                             </option>
 
                         </select>
+
                     </div>
 
                 </div>
@@ -106,13 +204,12 @@
 
                     <div class="facilities-grid">
 
-
                         <!-- Gym Access -->
                         <div class="facility">
 
                             <input type="checkbox" id="gymAccess" name="facilities" value="Gym Access"
                                 <%=membership.facilities.includes("Gym Access") ? "checked" : "" %>
-                            >
+                            required>
 
                             <label for="gymAccess">
                                 Gym Access
@@ -126,7 +223,7 @@
 
                             <input type="checkbox" id="locker" name="facilities" value="Locker"
                                 <%=membership.facilities.includes("Locker") ? "checked" : "" %>
-                            >
+                            required>
 
                             <label for="locker">
                                 Locker
@@ -139,8 +236,7 @@
                         <div class="facility">
 
                             <input type="checkbox" id="cardio" name="facilities" value="Cardio Area"
-                                <%=membership.facilities.includes("Cardio Area") ? "checked" : "" %>
-                            >
+                                <%=membership.facilities.includes("Cardio Area") ? "checked" : "" %>>
 
                             <label for="cardio">
                                 Cardio Area
@@ -153,8 +249,7 @@
                         <div class="facility">
 
                             <input type="checkbox" id="classes" name="facilities" value="Group Classes"
-                                <%=membership.facilities.includes("Group Classes") ? "checked" : "" %>
-                            >
+                                <%=membership.facilities.includes("Group Classes") ? "checked" : "" %>>
 
                             <label for="classes">
                                 Group Classes
@@ -167,8 +262,7 @@
                         <div class="facility">
 
                             <input type="checkbox" id="trainer" name="facilities" value="Personal Trainer"
-                                <%=membership.facilities.includes("Personal Trainer") ? "checked" : "" %>
-                            >
+                                <%=membership.facilities.includes("Personal Trainer") ? "checked" : "" %>>
 
                             <label for="trainer">
                                 Personal Trainer
@@ -181,8 +275,7 @@
                         <div class="facility">
 
                             <input type="checkbox" id="diet" name="facilities" value="Diet Consultation"
-                                <%=membership.facilities.includes("Diet Consultation") ? "checked" : "" %>
-                            >
+                                <%=membership.facilities.includes("Diet Consultation") ? "checked" : "" %>>
 
                             <label for="diet">
                                 Diet Consultation
@@ -202,8 +295,8 @@
                         Description
                     </label>
 
-                    <textarea id="description" name="description"
-                        placeholder="Enter membership description..."><%= membership.description %></textarea>
+                    <textarea id="description" name="description" placeholder="Enter membership description..."
+                        minlength="10" maxlength="500" required><%= membership.description %></textarea>
 
                 </div>
 
@@ -212,11 +305,15 @@
                 <div class="form-actions">
 
                     <button type="button" class="cancel-btn" onclick="history.back()">
+
                         Cancel
+
                     </button>
 
                     <button type="submit" class="submit-btn">
+
                         Update Membership
+
                     </button>
 
                 </div>

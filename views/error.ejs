@@ -1,0 +1,294 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="flexora-error-page">
+    <div class="error-glow error-glow-one"></div>
+    <div class="error-glow error-glow-two"></div>
+
+    <div class="error-content">
+        <div class="error-icon">
+            <i class="bi bi-exclamation-triangle"></i>
+        </div>
+
+        <p class="error-eyebrow">FLEXORA • SOMETHING WENT WRONG</p>
+
+        <h1>
+            Oops! <span>Something broke.</span>
+        </h1>
+
+        <p class="error-description">
+            Don't worry, even the best systems need a reset.
+            We couldn't complete your request this time.
+        </p>
+
+        <div class="error-details">
+            <span class="error-status">
+                ERROR <%= status || 500 %>
+            </span>
+
+            <p class="error-message">
+                <%= message || "Something went wrong. Please try again." %>
+            </p>
+        </div>
+
+        <div class="error-actions">
+            <button class="error-btn-primary" onclick="goBack()">
+                <i class="bi bi-arrow-left"></i>
+                Go Back
+            </button>
+
+            <a href="/flexora" class="error-btn-secondary">
+                <i class="bi bi-house"></i>
+                Home
+            </a>
+        </div>
+
+        <p class="error-footer">
+            <span></span>
+            FLEXORA — KEEP MOVING FORWARD
+        </p>
+    </div>
+
+    <div class="error-decoration">404</div>
+</div>
+
+<style>
+    .flexora-error-page {
+        position: relative;
+        min-height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 55px 20px;
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--bs-body-bg, #f8f9fc);
+        border-radius: 24px;
+    }
+
+    .error-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 570px;
+        text-align: center;
+    }
+
+    .error-icon {
+        width: 78px;
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        border-radius: 24px;
+        color: #ffffff;
+        font-size: 34px;
+        background: linear-gradient(135deg, #6c63ff, #5145cd);
+        box-shadow: 0 12px 35px rgba(108, 99, 255, 0.25);
+    }
+
+    .error-eyebrow {
+        margin-bottom: 14px;
+        color: #6c63ff;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    .error-content h1 {
+        margin-bottom: 18px;
+        color: var(--bs-emphasis-color, #17172b);
+        font-size: clamp(30px, 5vw, 46px);
+        line-height: 1.2;
+        font-weight: 800;
+        letter-spacing: -1.5px;
+    }
+
+    .error-content h1 span {
+        display: block;
+        color: #6c63ff;
+    }
+
+    .error-description {
+        max-width: 440px;
+        margin: 0 auto 28px;
+        color: var(--bs-secondary-color, #77788c);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .error-details {
+        padding: 20px;
+        margin-bottom: 28px;
+        text-align: left;
+        border: 1px solid rgba(108, 99, 255, 0.15);
+        border-radius: 16px;
+        background: rgba(108, 99, 255, 0.045);
+    }
+
+    .error-status {
+        display: inline-block;
+        padding: 6px 10px;
+        margin-bottom: 12px;
+        color: #6255e7;
+        background: rgba(108, 99, 255, 0.12);
+        border-radius: 7px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .error-message {
+        margin: 0;
+        color: var(--bs-emphasis-color, #292940);
+        font-size: 14px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .error-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .error-btn-primary,
+    .error-btn-secondary {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 0 22px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .error-btn-primary {
+        border: none;
+        color: #ffffff;
+        background: linear-gradient(135deg, #6c63ff, #5145cd);
+        box-shadow: 0 7px 18px rgba(108, 99, 255, 0.2);
+    }
+
+    .error-btn-secondary {
+        color: var(--bs-emphasis-color, #292940);
+        border: 1px solid var(--bs-border-color, #e3e3ed);
+        background: var(--bs-body-bg, #ffffff);
+    }
+
+    .error-btn-primary:hover,
+    .error-btn-secondary:hover {
+        transform: translateY(-3px);
+    }
+
+    .error-btn-primary:hover {
+        color: #ffffff;
+        box-shadow: 0 11px 24px rgba(108, 99, 255, 0.3);
+    }
+
+    .error-btn-secondary:hover {
+        color: #6c63ff;
+        border-color: #6c63ff;
+    }
+
+    .error-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        margin-top: 45px;
+        color: var(--bs-secondary-color, #9999aa);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .error-footer span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #6c63ff;
+    }
+
+    .error-glow {
+        position: absolute;
+        z-index: -1;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        filter: blur(85px);
+        opacity: 0.12;
+        pointer-events: none;
+        background: #6c63ff;
+    }
+
+    .error-glow-one {
+        top: -120px;
+        left: -100px;
+    }
+
+    .error-glow-two {
+        right: -100px;
+        bottom: -120px;
+        background: #00c9a7;
+    }
+
+    .error-decoration {
+        position: absolute;
+        z-index: -1;
+        right: 2%;
+        bottom: -90px;
+        color: var(--bs-emphasis-color, #17172b);
+        opacity: 0.025;
+        font-size: clamp(180px, 30vw, 380px);
+        font-weight: 900;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    @media (max-width: 576px) {
+        .flexora-error-page {
+            min-height: 70vh;
+            padding: 35px 16px;
+            border-radius: 16px;
+        }
+
+        .error-icon {
+            width: 66px;
+            height: 66px;
+            border-radius: 20px;
+            font-size: 29px;
+        }
+
+        .error-details {
+            padding: 16px;
+        }
+
+        .error-btn-primary,
+        .error-btn-secondary {
+            flex: 1;
+            padding: 0 14px;
+        }
+
+        .error-footer {
+            font-size: 9px;
+            letter-spacing: 1.4px;
+        }
+    }
+</style>
+
+<script>
+    function goBack() {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = "/";
+        }
+    }
+</script>

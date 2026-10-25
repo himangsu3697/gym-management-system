@@ -65,7 +65,7 @@
                                 <i class="fa-regular fa-user"></i>
 
                                 <input type="text" id="mname" name="mname" value="<%= member.mname %>"
-                                    placeholder="Enter member name" required>
+                                    placeholder="Enter member name" required minlength="2" maxlength="50">
 
                             </div>
 
@@ -125,7 +125,7 @@
                                 <i class="fa-solid fa-list-check"></i>
 
                                 <input type="text" id="workoutPlan" name="workoutPlan" value="<%= member.workoutPlan %>"
-                                    placeholder="Enter workout plan">
+                                    placeholder="Enter workout plan" maxlength="100">
 
                             </div>
 

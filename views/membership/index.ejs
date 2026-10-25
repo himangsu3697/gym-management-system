@@ -57,9 +57,14 @@
 
                                 </div>
 
-                                <span class="flexora-status">
-                                    Active
-                                </span>
+                                 <span class="flexora-status
+                    <%= membership.status === 'active'
+                        ? 'status-active'
+                        : 'status-inactive' %>">
+
+                        <%= membership.status %>
+
+                    </span>
 
                             </div>
 

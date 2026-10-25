@@ -1,16 +1,14 @@
 const express = require("express");
+const App = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
-const Member = require("./models/member.js");
-const Membership = require("./models/membership.js");
-const Trainer = require("./models/trainer.js");
 const methodOverride = require("method-override");
 const membershipRoutes = require("./routes/membership.js");
 const trainerRoutes = require("./routes/trainer.js");
 const memberRoutes = require("./routes/member.js");
 const handleExpiredMembership = require("./util/removeExpiredMembership.js");
-const App = express();
+const customError = require("./util/customError.js");
 const port = 8080;
 
 //body parser
@@ -56,7 +54,7 @@ App.get("/flexora/about", (req, res) => {
 //contact route
 App.get("/flexora/contact", (req, res) => {
   res.render("./contact.ejs");
-}); 
+});
 
 //membership routes
 App.use("/flexora/membership", membershipRoutes);
@@ -67,9 +65,29 @@ App.use("/flexora/trainer", trainerRoutes);
 //member routes
 App.use("/flexora/member", memberRoutes);
 
+//invalid route
+App.use((req, res) => {
+  throw new customError(404, "Page not found");
+});
+
+//error handling middlewere
+App.use((err, req, res, next) => {
+
+  //mongoose invalid id error
+  if (err instanceof mongoose.Error.CastError) {
+    return res.status(400).render("./error.ejs", {status : 400, message : "Invalid ID"});
+  }
+  //normal error
+  const { status = 500, message = "Something went wrong" } = err;
+  res
+  .status(status)
+  .render("./error.ejs", {status, message});
+});
+
 App.listen(port, () => {
   console.log("App is listning at the port : ", port);
 });
+
 
 
 

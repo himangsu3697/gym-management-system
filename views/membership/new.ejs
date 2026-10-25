@@ -29,43 +29,141 @@
                 <div class="membership-form-grid">
 
                     <!-- Plan Name -->
-                    <div class="form-field">
-                        <label for="planName">Plan Name</label>
 
-                        <input type="text" id="planName" name="planName" placeholder="e.g. Premium" required>
+                    <div class="form-field plan-field">
+                        <label class="plan-section-label">
+                            Membership Plan
+                        </label>
+
+                        <div class="plan-options">
+
+                            <div class="plan-option">
+                                <input type="radio" id="basic" name="planName" value="Basic" required>
+
+                                <label for="basic" class="plan-card">
+                                    <div class="plan-card-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+
+                                    <div class="plan-card-content">
+                                        <h3>Basic</h3>
+                                        <p>Essential gym access</p>
+                                    </div>
+
+                                    <div class="plan-check">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+                                </label>
+                            </div>
+
+
+                            <div class="plan-option">
+                                <input type="radio" id="premium" name="planName" value="Premium">
+
+                                <label for="premium" class="plan-card">
+                                    <div class="plan-card-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+
+                                    <div class="plan-card-content">
+                                        <h3>Premium</h3>
+                                        <p>More features & benefits</p>
+                                    </div>
+
+                                    <div class="plan-check">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+                                </label>
+                            </div>
+
+
+                            <div class="plan-option">
+                                <input type="radio" id="elite" name="planName" value="Elite">
+
+                                <label for="elite" class="plan-card">
+                                    <div class="plan-card-icon">
+                                        <i class="bi bi-gem"></i>
+                                    </div>
+
+                                    <div class="plan-card-content">
+                                        <h3>Elite</h3>
+                                        <p>Premium fitness experience</p>
+                                    </div>
+
+                                    <div class="plan-check">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+                                </label>
+                            </div>
+
+                        </div>
+
                     </div>
 
 
                     <!-- Duration -->
                     <div class="form-field">
+
                         <label for="duration">Duration</label>
 
                         <select id="duration" name="durationInMonths" required>
-                            <option value="">Select duration</option>
-                            <option value="1">1 Month</option>
-                            <option value="3">3 Months</option>
-                            <option value="6">6 Months</option>
-                            <option value="12">12 Months</option>
+
+                            <option value="" disabled selected>
+                                Select duration
+                            </option>
+
+                            <option value="1">
+                                1 Month
+                            </option>
+
+                            <option value="3">
+                                3 Months
+                            </option>
+
+                            <option value="6">
+                                6 Months
+                            </option>
+
+                            <option value="12">
+                                12 Months
+                            </option>
+
                         </select>
+
                     </div>
 
 
                     <!-- Price -->
                     <div class="form-field">
-                        <label for="price">Price (₹)</label>
 
-                        <input type="number" id="price" name="price" placeholder="e.g. 4000" min="0" required>
+                        <label for="price">
+                            Price (₹)
+                        </label>
+
+                        <input type="number" id="price" name="price" placeholder="e.g. 4000" min="1" step="1" required>
+
                     </div>
 
 
                     <!-- Status -->
                     <div class="form-field">
-                        <label for="status">Status</label>
 
-                        <select id="status" name="status">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status" name="status" required>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
                         </select>
+
                     </div>
 
                 </div>
@@ -81,56 +179,68 @@
                     <div class="facilities-grid">
 
                         <div class="facility">
-                            <input type="checkbox" id="gymAccess" name="facilities" value="Gym Access">
+
+                            <input type="checkbox" id="gymAccess" name="facilities" value="Gym Access" required>
 
                             <label for="gymAccess">
                                 Gym Access
                             </label>
+
                         </div>
 
 
                         <div class="facility">
-                            <input type="checkbox" id="locker" name="facilities" value="Locker">
+
+                            <input type="checkbox" id="locker" name="facilities" value="Locker" required>
 
                             <label for="locker">
                                 Locker
                             </label>
+
                         </div>
 
 
                         <div class="facility">
+
                             <input type="checkbox" id="cardio" name="facilities" value="Cardio Area">
 
                             <label for="cardio">
                                 Cardio Area
                             </label>
+
                         </div>
 
 
                         <div class="facility">
+
                             <input type="checkbox" id="classes" name="facilities" value="Group Classes">
 
                             <label for="classes">
                                 Group Classes
                             </label>
+
                         </div>
 
 
                         <div class="facility">
+
                             <input type="checkbox" id="trainer" name="facilities" value="Personal Trainer">
 
                             <label for="trainer">
                                 Personal Trainer
                             </label>
+
                         </div>
 
 
                         <div class="facility">
+
                             <input type="checkbox" id="diet" name="facilities" value="Diet Consultation">
 
                             <label for="diet">
                                 Diet Consultation
                             </label>
+
                         </div>
 
                     </div>
@@ -145,8 +255,8 @@
                         Description
                     </label>
 
-                    <textarea id="description" name="description"
-                        placeholder="Enter membership description..."></textarea>
+                    <textarea id="description" name="description" placeholder="Enter membership description..."
+                        minlength="10" maxlength="500" required></textarea>
 
                 </div>
 

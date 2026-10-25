@@ -1,29 +1,35 @@
 const mongoose = require("mongoose");
-const Membership = require("../models/membership.js");
-const Trainer = require("../models/trainer.js");
+
 const memberSchema = new mongoose.Schema({
     mname: {
         type: String,
-        required: true,
-        trim: true
+        required: [true, "Member name is required"],
+        trim: true,
+        minlength: [2, "Member name must be at least 2 characters long"],
+        maxlength: [50, "Member name cannot exceed 50 characters"]
     },
 
     email: {
         type: String,
-        required: true,
+        required: [true, "Member email address is required"],
         unique: true,
         lowercase: true,
-        trim: true
+        trim: true,
+        match: [
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            "Please enter a valid email address"
+        ]
     },
 
     age: {
         type: Number,
-        required: true,
-        min: 16
+        required: [true, "Member age is required"],
+        min: [16, "Member must be at least 16 years old"]
     },
 
     workoutPlan: {
-        type: String
+        type: String,
+        maxlength: [100, "Workout plan cannot exceed 100 characters"]
     },
 
     trainer: {
@@ -35,7 +41,7 @@ const memberSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Membership"
     },
-    
+
     membershipStartDate: {
         type: Date
     },
@@ -46,7 +52,10 @@ const memberSchema = new mongoose.Schema({
 
     status: {
         type: String,
-        enum: ["active", "inactive"],
+        enum: {
+            values: ["active", "inactive"],
+            message: "Member status must be either active or inactive"
+        },
         default: "inactive"
     }
 });
